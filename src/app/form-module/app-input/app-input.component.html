@@ -1,0 +1,11 @@
+<div class="form-group row">
+    <label class="col-form-label {{ labelClass }} {{ labelAlign }}">{{ label }}
+        <span *ngIf="label">:</span>
+        <span *ngIf="label && checkRequired()" class="text-danger">*</span>
+    </label>
+    <div>
+        <template #inputElement></template>
+        <p class="text-danger" *ngIf="checkError()">
+            {{ errorMsg }}</p>
+    </div>
+</div> 

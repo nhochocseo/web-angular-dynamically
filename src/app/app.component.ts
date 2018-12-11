@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material';
 import { DymamicDialogComponent } from './dymamic-dialog/dymamic-dialog.component';
 import { ExampleDialogContentComponent } from './dymamic-dialog/example-dialog-content/example-dialog-content.component';
+import { DialogLoginComponent } from './admin/dialog-login/dialog-login.component';
 
 @Component({
   selector: 'app-root',
@@ -51,7 +52,7 @@ export class AppComponent implements OnInit {
   }
 
   openDialog(): void {
-    let dialogRef = this.dialog.open(DymamicDialogComponent, {
+    let dialogRef = this.dialog.open(DialogLoginComponent, {
       width: '250px',
     });
     const customData: any = {

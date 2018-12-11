@@ -7,6 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DynamicFormModule } from './form-module/form.module';
 import { DymamicDialogModule } from './dymamic-dialog/dymamic-dialog.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DymamicDialogModule } from './dymamic-dialog/dymamic-dialog.module';
     ReactiveFormsModule,
     FormsModule,
     DynamicFormModule,
-    DymamicDialogModule
+    DymamicDialogModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

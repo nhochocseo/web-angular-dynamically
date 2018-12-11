@@ -23,8 +23,8 @@ import { NgModule } from '@angular/core';
         MatDatepickerModule,
         MatDialogModule
     ],
-    providers: [  
-        MatDatepickerModule,  
+    providers: [
+        MatDatepickerModule,
     ],
 })
-export class CustomMaterialModule { }
+export class CustomMaterialModule {}

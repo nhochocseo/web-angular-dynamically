@@ -6,8 +6,8 @@ import { CustomMaterialModule } from './material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DynamicFormModule } from './form-module/form.module';
-import { DymamicDialogModule } from './dymamic-dialog/dymamic-dialog.module';
 import { AdminModule } from './admin/admin.module';
+import { AppRoutingModule } from './app-routing/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,15 +16,13 @@ import { AdminModule } from './admin/admin.module';
   imports: [
     BrowserModule,
     CustomMaterialModule,
-    // NgModuleLoaderModule,
-    // OtfModule,
     FactoryResolverModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     DynamicFormModule,
-    DymamicDialogModule,
     AdminModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

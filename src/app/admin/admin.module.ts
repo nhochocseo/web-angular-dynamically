@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { DialogLoginComponent } from './dialog-login/dialog-login.component';
+import { LoginDialogModule } from './login-dialog/login-dialog.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    DialogLoginComponent
+    LoginDialogModule
   ],
-  declarations: [DialogLoginComponent]
+  entryComponents: [
+  ],
+  declarations: []
 })
 export class AdminModule { }

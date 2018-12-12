@@ -2,23 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomMaterialModule } from 'src/app/material.module';
 import { LoginDialogComponent } from './login-dialog.component';
-// import { LoginDialogContentComponent } from './login-dialog-content/login-dialog-content.component';
+import { FactoryResolverModule } from 'src/app/factory-resolver/factory-resolver.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { DynamicFormModule } from 'src/app/form-module/form.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    CustomMaterialModule
+    CustomMaterialModule,
+    FactoryResolverModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DynamicFormModule,
+    CustomMaterialModule,
   ],
   declarations: [
     LoginDialogComponent,
-    // LoginDialogContentComponent
   ],
   entryComponents: [
     LoginDialogComponent,
-    // LoginDialogContentComponent
   ],
   exports: [
-    // ExampleDialogContentComponent
   ]
 })
 export class LoginDialogModule { }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ViewContainerRef, ComponentRef, ComponentFactoryResolver, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login-dialog',
@@ -7,13 +8,18 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   styleUrls: ['./login-dialog.component.scss']
 })
 export class LoginDialogComponent implements OnInit {
-
+  exampleDynamicForm: FormGroup ;
   constructor(
-    public dialogRef: MatDialogRef<LoginDialogComponent>
+    public dialogRef: MatDialogRef<LoginDialogComponent>,
+    private fb: FormBuilder,
     ) { }
 
   ngOnInit() {
-
+    this.exampleDynamicForm = this.fb.group({
+      input: ['', Validators.required],
+      select: ['', Validators.required],
+      date: ['', Validators.required]
+    });
   }
   OnDestroy() {
   }

@@ -1,12 +1,12 @@
 <h3 mat-dialog-title>Đăng Nhập</h3>
 <mat-dialog-content>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Favorite food" value="Sushi">
+  <form class="login-form"  [formGroup]="exampleDynamicForm">
+    <mat-form-field class="login-full-width">
+      <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
     </mat-form-field>
   
-    <mat-form-field class="example-full-width">
-      <textarea matInput placeholder="Leave a comment"></textarea>
+    <mat-form-field class="login-full-width">
+      <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
     </mat-form-field>
   </form>
 </mat-dialog-content>

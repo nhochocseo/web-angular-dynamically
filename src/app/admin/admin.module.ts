@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginDialogModule } from './login-dialog/login-dialog.module';
+import { DynamicFormModule } from '../form-module/form.module';
+import { CustomMaterialModule } from '../material.module';
+import { FactoryResolverModule } from '../factory-resolver/factory-resolver.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { LoginDialogComponent } from './login-dialog/login-dialog.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    LoginDialogModule
+    LoginDialogModule,
   ],
   entryComponents: [
   ],

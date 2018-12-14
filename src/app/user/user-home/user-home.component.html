@@ -26,8 +26,22 @@
           This field is <strong>required</strong>
         </mat-error>
       </mat-form-field>
+
   </mat-tab>
   <mat-tab label="Use input with dynamic component" [formGroup]="exampleDynamicForm"> 
+      <mat-form-field>
+          <input matInput placeholder="Input Text" formControlName="input">
+          <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
+            This field is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Input Text" formControlName="input">
+            <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
+              This field is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+    <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
     <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
     <p>{{ exampleDynamicForm.get('input').value }}</p>
     <app-input formControlName="select" placeholder="type select" label="Input Select" type="select" [data]="{ options: options }"></app-input>

@@ -8,17 +8,16 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
   styleUrls: ['./login-dialog.component.scss']
 })
 export class LoginDialogComponent implements OnInit {
-  exampleDynamicForm: FormGroup ;
+  LoginForm: FormGroup ;
   constructor(
     public dialogRef: MatDialogRef<LoginDialogComponent>,
     private fb: FormBuilder,
     ) { }
 
   ngOnInit() {
-    this.exampleDynamicForm = this.fb.group({
-      input: ['', Validators.required],
-      select: ['', Validators.required],
-      date: ['', Validators.required]
+    this.LoginForm = this.fb.group({
+      user: [''],
+      password: ['']
     });
   }
   OnDestroy() {

@@ -3,7 +3,7 @@
         <span *ngIf="label">:</span>
         <span *ngIf="label && checkRequired()" class="text-danger">*</span>
     </label>
-    <div>
+    <div class="input-form">
         <template #inputElement></template>
         <p class="text-danger" *ngIf="checkError()">
             {{ errorMsg }}</p>

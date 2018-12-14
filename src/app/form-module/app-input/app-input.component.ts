@@ -13,11 +13,16 @@ import {
   OnDestroy,
   ChangeDetectionStrategy,
   ComponentRef,
+  Injector,
+  Output,
+  EventEmitter,
 } from '@angular/core';
+import { takeUntil } from 'rxjs/operators';
 import { AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR, NgControl, FormGroup, ControlContainer } from '@angular/forms';
 import { DynamicInputService } from './app-input.service';
 import { MESSAGE_VALIDATION, MESSAGE_VALIDATION_RULE } from '../message.validation';
 import { InputTypeBase } from './input-type.interface';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-input',
@@ -34,15 +39,18 @@ import { InputTypeBase } from './input-type.interface';
 })
 export class AppInputComponent implements OnInit, ControlValueAccessor, AfterViewInit, OnDestroy {
   // only have one type
+  @Output() blur = new EventEmitter<any>();
   @ViewChild('inputElement', { read: ViewContainerRef }) entry: ViewContainerRef;
   componentRef: ComponentRef<any>;
-  @Input() placeholder: string = '';
+  @Input() placeholder: '';
   @Input() label: string;
   @Input() formControl: AbstractControl;
   @Input() errorMessages: any;
   @Input() type: any = 'text';
-
+  @Input() needCheckValueChange = false;
+  @Output() getConTrolValidValue: EventEmitter<any> = new EventEmitter;
   _data: any = {};
+  destroy$: Subject<boolean> = new Subject<boolean>();
   @Input()
   get data() {
     return this._data;
@@ -55,7 +63,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   @Input()
   formControlName: string;
 
-  errorMsg: string = '';
+  errorMsg: '';
 
   _onChange: any;
   _onTouched: any;
@@ -63,15 +71,18 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   constructor(
     private _elementRef: ElementRef,
     private _renderer: Renderer2,
-    private resolver: ComponentFactoryResolver,
-    private helper: DynamicInputService,
-    private controlContainer: ControlContainer,
+    private _resolver: ComponentFactoryResolver,
+    private _helper: DynamicInputService,
+    private _controlContainer: ControlContainer,
+    private _injector: Injector,
   ) { }
 
   writeValue(value: any): void {
     this._renderer.setProperty(this._elementRef.nativeElement, 'value', value);
   }
-
+  get ngControl() {
+    return this._injector.get(NgControl);
+  }
   @HostListener('change') change($event) {
     if ($event && $event.target) {
       this._onChange($event.target.value);
@@ -83,8 +94,9 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     this._onChange = fn;
   }
 
-  @HostListener('blur') blur() {
+  @HostListener('focusout') onBlur() {
     this._onTouched();
+    this.blur.emit();
   }
 
   // Allows Angular to register a function to call when the input has been touched.
@@ -98,37 +110,49 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   ngOnInit(): void {
-    if (this.controlContainer && this.formControlName) {
-      this.formControl = this.controlContainer.control.get(this.formControlName);
+    if (this._controlContainer && this.formControlName) {
+      this.formControl = this._controlContainer.control.get(this.formControlName);
     }
   }
 
   ngAfterViewInit(): void {
-    this.createInputComponent(this.entry);
+    setTimeout(() => {
+      console.log(this.ngControl);
+      this.createInputComponent(this.entry);
+    if (this.needCheckValueChange) {
+      this.ngControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(
+        (value) => {
+          this.getConTrolValidValue.emit(value);
+        });
+    }
+    }, 500);
   }
 
+  // Tạo input chung
   createInputComponent(entry) {
+    console.log(this.entry);
+    console.log(this._injector);
     entry.clear();
-    const component = this.helper.getInputComponentByType(this.type);
-
+    const component = this._helper.getInputComponentByType(this.type);
     if (!component) {
       alert('error');
     }
-    const factory = this.resolver.resolveComponentFactory(component);
+    const factory = this._resolver.resolveComponentFactory(component);
     this.componentRef = entry.createComponent(factory);
+    console.log((<InputTypeBase<any>>this.componentRef.instance));
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
     this.initDataForChild(this.data);
   }
 
   initDataForChild(data: any) {
-    if(this.componentRef && data) {
+    if (this.componentRef && data) {
       data.placeholder = this.placeholder;
       (<InputTypeBase<any>>this.componentRef.instance).data = data;
     }
   }
 
   checkRequired() {
-    if (!this.formControl) return false;
+    if (!this.formControl) { return false; }
     const abstractControl = this.formControl;
     if (abstractControl.validator) {
       const validator = abstractControl.validator({} as AbstractControl);
@@ -141,7 +165,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   checkError() {
-    if (!this.formControl) return false;
+    if (!this.formControl) { return false; }
 
     const control = this.formControl;
     if (control.errors && (control.touched || control.dirty)) {
@@ -156,11 +180,10 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   getErrorMsg(errors) {
-    if (!this.formControl) return '';
+    if (!this.formControl) { return ''; }
 
     let rule;
-    let msg = '';
-    let nameControl = this.getNameControl();
+    const nameControl = this.getNameControl();
 
     for (const key in errors) {
       if (errors[key]) {
@@ -193,8 +216,8 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     if (this.formControlName) {
       return this.formControlName;
     }
-    var controlName = null;
-    var parent = this.formControl.parent;
+    let controlName = null;
+    const parent = this.formControl.parent;
     // only such parent, which is FormGroup, has a dictionary
     // with control-names as a key and a form-control as a value
     if (parent instanceof FormGroup) {

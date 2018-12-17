@@ -75,6 +75,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     private _helper: DynamicInputService,
     private _controlContainer: ControlContainer,
     private _injector: Injector,
+    private viewContainerRef: ViewContainerRef,
   ) { }
 
   writeValue(value: any): void {
@@ -130,15 +131,16 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
 
   // Tạo input chung
   createInputComponent(entry) {
-    console.log(this.entry);
-    console.log(this._injector);
     entry.clear();
     const component = this._helper.getInputComponentByType(this.type);
     if (!component) {
       alert('error');
     }
-    const factory = this._resolver.resolveComponentFactory(component);
-    this.componentRef = entry.createComponent(factory);
+    const componentFactory = this._resolver.resolveComponentFactory(component);
+    this.componentRef = this.viewContainerRef
+      .createComponent(componentFactory);
+    // const factory = this._resolver.resolveComponentFactory(component);
+    // this.componentRef = entry.createComponent(componentFactory);
     console.log((<InputTypeBase<any>>this.componentRef.instance));
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
     this.initDataForChild(this.data);

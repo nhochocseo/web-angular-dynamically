@@ -1,16 +1,11 @@
-<h3 mat-dialog-title>Đăng Nhập</h3>
-<mat-dialog-content>
-  <form class="login-form"  [formGroup]="LoginForm">
-      <app-input formControlName="user" placeholder="Tên đăng nhập"></app-input> 
-      <app-input formControlName="password" placeholder="Mật khẩu"></app-input>
-      <mat-form-field class="input-full-width">
-        <input matInput placeholder="placeholder" type="text">
-      </mat-form-field><mat-form-field class="input-full-width">
-        <input matInput placeholder="placeholder" type="text">
-      </mat-form-field>
-  </form>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-button [mat-dialog-close]="true">Close</button>
-</mat-dialog-actions>
+<form class="login-form" [formGroup]="LoginForm" (ngSubmit)="OnSubmit()">
+  <h3 mat-dialog-title>Đăng Nhập</h3>
+  <mat-dialog-content>
+        <app-input formControlName="user" placeholder="Tên đăng nhập"></app-input> 
+        <app-input formControlName="password" placeholder="Mật khẩu"></app-input>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button type="submit">Đăng nhập</button>
+    <button mat-button [mat-dialog-close]="true">Close</button>
+  </mat-dialog-actions>
+</form>

@@ -21,7 +21,7 @@ export class InputTypeSelectComponent {
   }
 
   set data(data) {
-    console.log(data);
+    // console.log(data);
     if (!data) return;
     if (data.placeholder) {
       this.placeholder = data.placeholder;

@@ -21,7 +21,7 @@ export class InputTypeTextComponent extends InputTypeBase<IDataText> implements 
   }
 
   set data(data) {
-    if (!data) return;
+    if (!data) { return; }
     if (data.placeholder) {
       this.placeholder = data.placeholder;
     }

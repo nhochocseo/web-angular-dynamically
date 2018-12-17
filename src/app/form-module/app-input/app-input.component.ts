@@ -75,7 +75,6 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     private _helper: DynamicInputService,
     private _controlContainer: ControlContainer,
     private _injector: Injector,
-    private viewContainerRef: ViewContainerRef,
   ) { }
 
   writeValue(value: any): void {
@@ -117,16 +116,13 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => {
-      console.log(this.ngControl);
-      this.createInputComponent(this.entry);
+    this.createInputComponent(this.entry);
     if (this.needCheckValueChange) {
       this.ngControl.valueChanges.pipe(takeUntil(this.destroy$)).subscribe(
         (value) => {
           this.getConTrolValidValue.emit(value);
         });
     }
-    }, 500);
   }
 
   // Tạo input chung
@@ -136,17 +132,17 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     if (!component) {
       alert('error');
     }
-    const componentFactory = this._resolver.resolveComponentFactory(component);
-    this.componentRef = this.viewContainerRef
-      .createComponent(componentFactory);
-    // const factory = this._resolver.resolveComponentFactory(component);
-    // this.componentRef = entry.createComponent(componentFactory);
-    console.log((<InputTypeBase<any>>this.componentRef.instance));
+    const factory = this._resolver.resolveComponentFactory(component);
+    this.componentRef = entry.createComponent(factory, 0, this._injector);
+    console.log(this.componentRef);
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
     this.initDataForChild(this.data);
+    // https://angular.io/api/core/ChangeDetectorRef
+    this.componentRef.changeDetectorRef.detectChanges();
   }
 
   initDataForChild(data: any) {
+    console.log(data);
     if (this.componentRef && data) {
       data.placeholder = this.placeholder;
       (<InputTypeBase<any>>this.componentRef.instance).data = data;

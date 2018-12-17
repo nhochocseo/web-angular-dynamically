@@ -133,7 +133,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
       alert('error');
     }
     const factory = this._resolver.resolveComponentFactory(component);
-    this.componentRef = entry.createComponent(factory, 0, this._injector);
+    this.componentRef = entry.createComponent(factory);
     console.log(this.componentRef);
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
     this.initDataForChild(this.data);

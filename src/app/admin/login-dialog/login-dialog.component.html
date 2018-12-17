@@ -2,10 +2,10 @@
   <h3 mat-dialog-title>Đăng Nhập</h3>
   <mat-dialog-content>
         <app-input formControlName="user" placeholder="Tên đăng nhập"></app-input> 
-        <app-input formControlName="password" placeholder="Mật khẩu"></app-input>
+        <app-input formControlName="password" type="password" placeholder="Mật khẩu"></app-input>
   </mat-dialog-content>
   <mat-dialog-actions>
-    <button mat-button type="submit">Đăng nhập</button>
-    <button mat-button [mat-dialog-close]="true">Close</button>
+    <button mat-button type="submit" class="btn-login">Đăng nhập</button>
+    <button mat-button (click)="DangKy()" class="btn-dangky">Đăng Ký</button>
   </mat-dialog-actions>
 </form>

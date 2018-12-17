@@ -7,6 +7,7 @@ import { InputTypeTextComponent } from './app-input/input-type-text/input-type-t
 import { CustomMaterialModule } from '../material.module';
 import { InputTypeSelectComponent } from './app-input/input-type-select/input-type-select.component';
 import { InputTypeDateComponent } from './app-input/input-type-date/input-type-date.component';
+import { InputTypePasswordComponent } from './app-input/input-type-password/input-type-password.component';
 
 @NgModule({
   imports: [
@@ -20,11 +21,13 @@ import { InputTypeDateComponent } from './app-input/input-type-date/input-type-d
     InputTypeTextComponent,
     InputTypeSelectComponent,
     InputTypeDateComponent,
+    InputTypePasswordComponent,
   ],
   entryComponents: [
     InputTypeTextComponent,
     InputTypeSelectComponent,
     InputTypeDateComponent,
+    InputTypePasswordComponent
   ],
   providers: [
     DynamicInputService

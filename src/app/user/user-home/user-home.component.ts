@@ -2,14 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { LoginDialogComponent } from 'src/app/admin/login-dialog/login-dialog.component';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material';
+import { dataPost } from 'src/app/services/dataFace/newpost.service';
 
 @Component({
   selector: 'app-user-home',
   templateUrl: './user-home.component.html',
-  styleUrls: ['./user-home.component.css']
+  styleUrls: ['./user-home.component.scss']
 })
 export class UserHomeComponent implements OnInit {
-
+  listPost: Array<any>;
   exampleDynamicForm: FormGroup ;
   normalForm: FormGroup;
   options = [
@@ -47,15 +48,19 @@ export class UserHomeComponent implements OnInit {
     this.normalForm.get('input').valueChanges.subscribe(() => {
       // console.log(this.normalForm.get('input'), this.normalForm.get('input').hasError('required') && (this.normalForm.get('input').dirty || this.normalForm.get('input').touched))
     });
+    //load bài viết
+    this.LoadPost();
   }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(LoginDialogComponent, {
-      width: '250px',
-    });
-    const customData: any = {
-      text: 'Pass anything here'
-    };
+  LoadPost() {
+    this.listPost = dataPost;
   }
+  // openDialog(): void {
+  //   const dialogRef = this.dialog.open(LoginDialogComponent, {
+  //     width: '250px',
+  //   });
+  //   const customData: any = {
+  //     text: 'Pass anything here'
+  //   };
+  // }
 
 }

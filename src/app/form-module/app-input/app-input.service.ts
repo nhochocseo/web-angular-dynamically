@@ -12,7 +12,6 @@ export class DynamicInputService {
     getInputComponentByType(type: any): any {
         // debugger;
         let component;
-        console.log(type);
         switch (type) {
             case 'select':
                 component = InputTypeSelectComponent;

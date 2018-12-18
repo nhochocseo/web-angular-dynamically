@@ -134,7 +134,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     }
     const factory = this._resolver.resolveComponentFactory(component);
     this.componentRef = entry.createComponent(factory);
-    console.log(this.componentRef);
+    // console.log(this.componentRef);
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
     this.initDataForChild(this.data);
     // https://angular.io/api/core/ChangeDetectorRef
@@ -142,7 +142,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   initDataForChild(data: any) {
-    console.log(data);
+    // console.log(data);
     if (this.componentRef && data) {
       data.placeholder = this.placeholder;
       (<InputTypeBase<any>>this.componentRef.instance).data = data;

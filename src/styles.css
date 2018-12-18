@@ -1,9 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-body {
-    margin: 0px;
-    color: #fff;
-}
 .form-group {
           display: flex;      
           flex: 0 0 auto;      
@@ -52,3 +48,22 @@ body {
 .open .dropdown-menu {
     display: block;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #431e54; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

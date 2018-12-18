@@ -1,5 +1,5 @@
 // tslint:disable-next-line:max-line-length
-import { MatButtonModule, MatCheckboxModule, MatTabsModule, MatInputModule, MatSelectModule, MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule } from '@angular/material';
+import { MatButtonModule, MatCheckboxModule, MatTabsModule, MatInputModule, MatSelectModule, MatAutocompleteModule, MatDatepickerModule, MatNativeDateModule, MatDialogModule, MatIconModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -12,7 +12,8 @@ import { NgModule } from '@angular/core';
         MatAutocompleteModule,
         MatDatepickerModule,
         MatNativeDateModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule
     ],
     exports: [
         MatButtonModule,
@@ -22,7 +23,8 @@ import { NgModule } from '@angular/core';
         MatSelectModule,
         MatAutocompleteModule,
         MatDatepickerModule,
-        MatDialogModule
+        MatDialogModule,
+        MatIconModule
     ],
     providers: [
         MatDatepickerModule,

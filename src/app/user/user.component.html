@@ -1,7 +1,22 @@
-<div class="header mr-15">  
-  <button mat-raised-button (click)="openDialogLogin()">Đăng nhập</button>
+<div class="header pd-15 row">  
+  <h3 class="header-left">
+    <div class="icon-menu" (click)="ShowSidebar()">
+        <mat-icon>menu</mat-icon>
+    </div>
+    BlogCMS
+  </h3>
+  <div class="header-right">
+    <a class="login" (click)="openDialogLogin()">Đăng nhập</a>
+  </div>
 </div>
-<router-outlet></router-outlet>
-<div class="footer">
-  Footer
+<div class="container-full">
+  <div class="siderbar"  [ngClass]="{'show': isShow}">
+    <app-slide-bar></app-slide-bar>
+  </div>
+  <div class="main-content">
+      <router-outlet></router-outlet>
+  </div>
+</div>
+<div class="footer pd-15">
+    Copyright © 2018 Cao Dũng. All Rights Reversed
 </div>

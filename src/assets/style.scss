@@ -1,3 +1,27 @@
+body {
+    background: linear-gradient(rgba(4, 4, 4, 0.45), rgb(39, 13, 26)),url('../assets/images/background.jpg') no-repeat center center fixed; 
+    // -webkit-background-size: cover;
+    // -moz-background-size: cover;
+    // -o-background-size: cover;
+    // background-size: cover;
+    min-height: 100%;
+    min-width: 100%;
+    background-color:black;
+    color: #fff;
+    position: fixed;
+}
+.no-mr {
+    margin: 0px!important;
+    margin-left: 0px;
+    margin-right: 0px;
+}
 .mr-15 {
     margin: 15px;
 }
+.pd-15 {
+    padding: 15px;
+}
+.mr-b-5 {
+margin-bottom: 5px;
+}
+@import 'bootstrap-material-design/css/bootstrap-material-design.min.css';

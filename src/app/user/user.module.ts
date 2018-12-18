@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DynamicFormModule } from '../form-module/form.module';
 import { CustomMaterialModule } from '../material.module';
+import { SlideBarComponent } from './slide-bar/slide-bar.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { CustomMaterialModule } from '../material.module';
     DynamicFormModule,
     CustomMaterialModule,
   ],
-  declarations: [UserComponent, UserHomeComponent]
+  declarations: [UserComponent, UserHomeComponent, SlideBarComponent]
 })
 export class UserModule { }

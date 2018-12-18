@@ -1,0 +1,5 @@
+<ul class="main-menu">
+  <li *ngFor="let menu of listSidebarMenu" (click)="OpenPage(menu.url)">
+    <a href="{{menu.url}}"><strong><mat-icon>{{menu.icon}}</mat-icon></strong> {{menu.name}}</a>
+  </li>
+</ul>

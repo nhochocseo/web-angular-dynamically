@@ -38,7 +38,7 @@
         height: 100%;    
         transition: 0.5s all; 
     }
-    .show {
+    .siderbar.show {
         width: 50px;
         transition: 0.5s all;
     }
@@ -48,6 +48,11 @@
         padding-left: 15px;
         height: 84vh;
         overflow-y: scroll;
+        transition: 0.5s all; 
+    }
+    .main-content.show {
+        width: 96%;
+        transition: 0.5s all; 
     }
 }
 .footer {
@@ -58,6 +63,20 @@
     width: 100%;
     background:#04040208;
 }
+@media (max-width: 1235px) {
+    .container-full {
+        .main-content.show {
+            width: 95%;
+        }
+    }
+}
+@media (max-width: 996px) {
+    .container-full {
+        .main-content.show {
+            width: 90%;
+        }
+    }
+}
 @media (max-width: 767px) {
     .container-full {        
         .siderbar {
@@ -67,7 +86,7 @@
             position: fixed;
             
         }
-        .show {
+        .siderbar.show {
             width: 250px;
             transition: 0.5s all;
             display: block !important;
@@ -76,6 +95,9 @@
             border-right: 1px solid #af8888;
             transition: 0.5s all; 
             height: 92.6%;
+        }
+        .main-content.show {
+            width: 100%;
         }
         .main-content {
             position: relative;

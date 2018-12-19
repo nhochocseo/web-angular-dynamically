@@ -9,6 +9,7 @@ import { DynamicFormModule } from './form-module/form.module';
 import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppInputComponent } from './form-module/app-input/app-input.component';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppInputComponent } from './form-module/app-input/app-input.component';
     FormsModule,
     DynamicFormModule,
     AdminModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LoadingBarModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

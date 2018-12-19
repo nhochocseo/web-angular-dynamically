@@ -5,15 +5,26 @@ import { DynamicFormModule } from '../form-module/form.module';
 import { CustomMaterialModule } from '../material.module';
 import { FactoryResolverModule } from '../factory-resolver/factory-resolver.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { LoginDialogComponent } from './login-dialog/login-dialog.component';
+import { HomePanelComponent } from './home-panel/home-panel.component';
+import { RoutingModule } from './routing/routing.module';
+import { AdminComponent } from './admin.component';
 
 @NgModule({
   imports: [
     CommonModule,
     LoginDialogModule,
+    RoutingModule,
+    FactoryResolverModule,
+    ReactiveFormsModule,
+    FormsModule,
+    DynamicFormModule,
+    CustomMaterialModule,
   ],
   entryComponents: [
   ],
-  declarations: []
+  declarations: [
+    HomePanelComponent,
+    AdminComponent
+  ]
 })
 export class AdminModule { }

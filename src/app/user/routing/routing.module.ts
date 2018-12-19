@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { UserComponent } from '../user.component';
 import { UserHomeComponent } from '../user-home/user-home.component';
+import { Error404Component } from '../error404/error404.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -16,16 +17,16 @@ import { UserHomeComponent } from '../user-home/user-home.component';
           component: UserHomeComponent,
           pathMatch: 'full'
         },
-        // {
-        //   path: 'index',
-        //   component: UserHomeComponent,
-        // }
+        {
+          path: 'index',
+          component: Error404Component,
+        }
       ]
     },
-    // {
-    //   path: '**',
-    //   component: ErrorComponent,
-    // }
+    {
+      path: '**',
+      component: Error404Component,
+    }
   ])],
   exports: [RouterModule]
 })

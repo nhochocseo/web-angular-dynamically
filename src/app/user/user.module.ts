@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { DynamicFormModule } from '../form-module/form.module';
 import { CustomMaterialModule } from '../material.module';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
+import { Error404Component } from './error404/error404.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,6 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
     DynamicFormModule,
     CustomMaterialModule,
   ],
-  declarations: [UserComponent, UserHomeComponent, SlideBarComponent]
+  declarations: [UserComponent, UserHomeComponent, SlideBarComponent, Error404Component]
 })
 export class UserModule { }

@@ -10,6 +10,8 @@ import { DynamicFormModule } from '../form-module/form.module';
 import { CustomMaterialModule } from '../material.module';
 import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { Error404Component } from './error404/error404.component';
+import { ChuyenMucComponent } from './chuyen-muc/chuyen-muc.component';
+import { ChiTietChuyenMucComponent } from './chuyen-muc/chi-tiet-chuyen-muc/chi-tiet-chuyen-muc.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,6 @@ import { Error404Component } from './error404/error404.component';
     DynamicFormModule,
     CustomMaterialModule,
   ],
-  declarations: [UserComponent, UserHomeComponent, SlideBarComponent, Error404Component]
+  declarations: [UserComponent, UserHomeComponent, SlideBarComponent, Error404Component, ChuyenMucComponent, ChiTietChuyenMucComponent]
 })
 export class UserModule { }

@@ -30,7 +30,7 @@ export class UserHomeComponent implements OnInit {
       id: 4,
       value: 'Value 4'
     },
-  ]
+  ];
 
   constructor(
     private fb: FormBuilder,

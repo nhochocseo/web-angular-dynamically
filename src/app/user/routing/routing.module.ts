@@ -4,6 +4,8 @@ import { RouterModule } from '@angular/router';
 import { UserComponent } from '../user.component';
 import { UserHomeComponent } from '../user-home/user-home.component';
 import { Error404Component } from '../error404/error404.component';
+import { ChuyenMucComponent } from '../chuyen-muc/chuyen-muc.component';
+import { ChiTietChuyenMucComponent } from '../chuyen-muc/chi-tiet-chuyen-muc/chi-tiet-chuyen-muc.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -20,6 +22,15 @@ import { Error404Component } from '../error404/error404.component';
         {
           path: 'index',
           component: Error404Component,
+        },
+        {
+          path: 'chuyen-muc',
+          component: ChuyenMucComponent,
+          data: { breadcrumbs: 'Chuyên mục' }
+        },
+        {
+          path: 'chuyen-muc/:id',
+          component: ChiTietChuyenMucComponent,
         }
       ]
     },

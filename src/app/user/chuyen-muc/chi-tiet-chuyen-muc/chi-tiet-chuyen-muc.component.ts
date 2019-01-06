@@ -4,6 +4,7 @@ import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { HelperFunction } from 'src/app/share/helper/helper.function';
 import { dataPost } from 'src/app/services/dataFace/newpost.service';
+import { dataCategory } from 'src/app/services/dataFace/category.service';
 
 @Component({
   selector: 'app-chi-tiet-chuyen-muc',
@@ -14,6 +15,7 @@ export class ChiTietChuyenMucComponent implements OnInit , OnDestroy {
   destroy$: Subject<boolean> = new Subject<boolean>();
   chiTietChuyenMuc: any;
   baiVienLienQuan: any;
+  category: any;
   constructor(
     private activeRoute: ActivatedRoute,
     private helperFunction: HelperFunction,
@@ -37,6 +39,10 @@ export class ChiTietChuyenMucComponent implements OnInit , OnDestroy {
   GetPostById(id: number) {
     this.chiTietChuyenMuc = dataPost.find(res => res.id == id);
     this.helperFunction.setTitle(this.chiTietChuyenMuc.name);
+    this.GetCategoryById(this.chiTietChuyenMuc.idCategory);
+  }
+  GetCategoryById(id: any) {
+    this.category = dataCategory.find(res => res.id == id);
   }
   BaiVietLienQuan(id: number) {
     this.baiVienLienQuan = dataPost.filter(res => {

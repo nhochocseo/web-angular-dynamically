@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { dataSlide } from 'src/app/services/dataFace/sidebar.service';
+import { Router } from '@angular/router';
+import { HelperFunction } from 'src/app/share/helper/helper.function';
 
 @Component({
   selector: 'app-slide-bar',
@@ -8,7 +10,10 @@ import { dataSlide } from 'src/app/services/dataFace/sidebar.service';
 })
 export class SlideBarComponent implements OnInit {
   listSidebarMenu: Array<any>;
-  constructor() { }
+  constructor(
+    private router: Router,
+    private helperFunction: HelperFunction,
+  ) { }
 
   ngOnInit() {
     this.getListMenu();
@@ -17,7 +22,6 @@ export class SlideBarComponent implements OnInit {
     this.listSidebarMenu = dataSlide;
   }
   OpenPage(url: any) {
-    console.log(url);
+    this.router.navigate(['/chuyen-muc/', this.helperFunction.change_alias(url)]);
   }
-
 }

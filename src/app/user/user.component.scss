@@ -2,6 +2,7 @@
     cursor: pointer;
     float: right;
 }
+
 .header {
     position: fixed;
     width: 100%;
@@ -9,10 +10,12 @@
     margin-bottom: 15px;
     margin: 0px;
 }
+
 .header-right {
     line-height: 2em;
     width: 50%;
 }
+
 .header-left {
     width: 50%;
     .icon-menu {
@@ -26,6 +29,7 @@
         cursor: pointer;
     }
 }
+
 .container-full {
     position: absolute;
     top: 89px;
@@ -35,8 +39,8 @@
         float: left;
         flex: 0 0 50%;
         border-bottom: 1px solid #af8888;
-        height: 100%;    
-        transition: 0.5s all; 
+        height: 100%;
+        transition: 0.5s all;
     }
     .siderbar.show {
         width: 50px;
@@ -48,21 +52,23 @@
         padding-left: 15px;
         height: 84vh;
         overflow-y: scroll;
-        transition: 0.5s all; 
+        transition: 0.5s all;
     }
     .main-content.show {
         width: 96%;
-        transition: 0.5s all; 
+        transition: 0.5s all;
     }
 }
+
 .footer {
     position: fixed;
     clear: both;
     text-align: center;
     bottom: 0px;
     width: 100%;
-    background:#04040208;
+    background: #842a60;
 }
+
 @media (max-width: 1235px) {
     .container-full {
         .main-content.show {
@@ -70,6 +76,7 @@
         }
     }
 }
+
 @media (max-width: 996px) {
     .container-full {
         .main-content.show {
@@ -77,14 +84,14 @@
         }
     }
 }
+
 @media (max-width: 767px) {
-    .container-full {        
+    .container-full {
         .siderbar {
             top: 64px;
             width: 0px;
-            transition: 0.5s all; 
+            transition: 0.5s all;
             position: fixed;
-            
         }
         .siderbar.show {
             width: 250px;
@@ -93,7 +100,7 @@
             background: #1d0e31f5;
             z-index: 999;
             border-right: 1px solid #af8888;
-            transition: 0.5s all; 
+            transition: 0.5s all;
             height: 92.6%;
         }
         .main-content.show {
@@ -105,6 +112,7 @@
         }
     }
 }
+
 @media(max-width:360px) {
     .footer {
         font-size: 11px;

@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef, ComponentRef, OnDestroy } from '@angular/core';
 import { BFactoryComponent } from '../b-factory/b-factory.component';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-a-factory',
@@ -8,7 +9,7 @@ import { BFactoryComponent } from '../b-factory/b-factory.component';
 })
 export class AFactoryComponent implements AfterViewInit, OnDestroy {
   // We can get a reference to the template element with the ViewChild decorator that also takes a local variable as a parameter.
-
+  destroy$: Subject<boolean> = new Subject<boolean>();
   // The default return from the ViewChild decorator is the component instance or the DOM element, but in our case, we need to get the element as ViewContainerRef.
   @ViewChild('vc', {read: ViewContainerRef}) _container: ViewContainerRef;
   componenRef: ComponentRef<any>;
@@ -33,6 +34,10 @@ export class AFactoryComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.componenRef.destroy();
+    if (this.componenRef) {
+      this.destroy$.next(true);
+      this.destroy$.unsubscribe();
+      this.componenRef.destroy();
+    }
   }
 }

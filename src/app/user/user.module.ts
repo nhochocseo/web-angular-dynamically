@@ -12,6 +12,7 @@ import { SlideBarComponent } from './slide-bar/slide-bar.component';
 import { Error404Component } from './error404/error404.component';
 import { ChuyenMucComponent } from './chuyen-muc/chuyen-muc.component';
 import { ChiTietChuyenMucComponent } from './chuyen-muc/chi-tiet-chuyen-muc/chi-tiet-chuyen-muc.component';
+import { PipeModule } from '../share/pipe/module.pipe';
 
 @NgModule({
   imports: [
@@ -22,6 +23,10 @@ import { ChiTietChuyenMucComponent } from './chuyen-muc/chi-tiet-chuyen-muc/chi-
     FormsModule,
     DynamicFormModule,
     CustomMaterialModule,
+    PipeModule
+  ],
+  exports: [
+    PipeModule
   ],
   declarations: [UserComponent, UserHomeComponent, SlideBarComponent, Error404Component, ChuyenMucComponent, ChiTietChuyenMucComponent]
 })

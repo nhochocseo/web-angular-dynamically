@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { LoginDialogComponent } from '../admin/login-dialog/login-dialog.component';
 import { MatDialog } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
+import { Router } from '@angular/router';
+import { HelperFunction } from '../share/helper/helper.function';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -10,7 +12,9 @@ import {MatIconModule} from '@angular/material/icon';
 export class UserComponent implements OnInit {
   isShow: any = false;
   constructor(
-    private dialogLogin: MatDialog
+    private dialogLogin: MatDialog,
+    private router: Router,
+    private helperFunction: HelperFunction
   ) { }
 
   ngOnInit() {
@@ -23,5 +27,7 @@ export class UserComponent implements OnInit {
   ShowSidebar() {
     this.isShow = !this.isShow;
   }
-
+  Home() {
+    this.router.navigate(['/']);
+  }
 }

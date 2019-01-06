@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { dataPost } from 'src/app/services/dataFace/newpost.service';
 import { Router } from '@angular/router';
+import { HelperFunction } from 'src/app/share/helper/helper.function';
 
 @Component({
   selector: 'app-chuyen-muc',
@@ -11,6 +12,7 @@ export class ChuyenMucComponent implements OnInit {
   listPost: Array<any>;
   constructor(
     private router: Router,
+    private helperFunction: HelperFunction
   ) { }
 
   ngOnInit() {
@@ -20,8 +22,6 @@ export class ChuyenMucComponent implements OnInit {
     this.listPost = dataPost;
   }
   ChiTiet(data: any) {
-    console.log(data);
-    const str = data.name.replace(/[^0-9a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ\s]/gi, '');
-    this.router.navigate(['/chuyen-muc/', str + '_' + data.id]);
+    this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
   }
 }

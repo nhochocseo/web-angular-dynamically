@@ -29,7 +29,7 @@ import { ChiTietChuyenMucComponent } from '../chuyen-muc/chi-tiet-chuyen-muc/chi
           data: { breadcrumbs: 'Chuyên mục' }
         },
         {
-          path: 'chuyen-muc/:id',
+          path: ':chuoiTieuDe',
           component: ChiTietChuyenMucComponent,
         }
       ]

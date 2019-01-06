@@ -1,66 +1,60 @@
 <div class="row no-mr">
     <div class="col-md-4 col-lg-3 post-item" *ngFor="let post of listPost">
-      <div class="card mr-b-5 box-shadow">
-        <img class="card-img-top" data-src="holder.js/100px225?theme=thumb&amp;bg=55595c&amp;fg=eceeef&amp;text=Thumbnail" alt="Thumbnail [100%x225]" style="height: 225px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22350%22%20height%3D%22225%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20350%20225%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_167c0b2cb1d%20text%20%7B%20fill%3A%23eceeef%3Bfont-weight%3Abold%3Bfont-family%3AArial%2C%20Helvetica%2C%20Open%20Sans%2C%20sans-serif%2C%20monospace%3Bfont-size%3A18pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_167c0b2cb1d%22%3E%3Crect%20width%3D%22350%22%20height%3D%22225%22%20fill%3D%22%2355595c%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22114.34375%22%20y%3D%22120.6%22%3EThumbnail%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" data-holder-rendered="true">
-        <div class="card-body">
-          <p class="card-text">
-            <a href="">{{post.name}}</a>
-          </p>
+        <div class="card mr-b-5 box-shadow">
+            <img class="card-img-top" alt="{{post.name}}" style="height: 225px; width: 100%; display: block;" src="{{post.image | defaultThumbnail}}" data-holder-rendered="true">
+            <div class="card-body">
+                <p class="card-text">
+                    <a class="blue" (click)="ChiTiet(post)">{{post.name}}</a>
+                </p>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
+</div>
 <h1>
     Here is what you need to know
-    <br>
-    about dynamic components in Angular asdasdvasda dhasgdgasdgjagsd ádagsdgajhsgd
-  </h1>
-  <button mat-raised-button (click)="openDialog()">Open dialog</button>
-  <mat-tab-group>
-    <mat-tab label="Basic Factory Resolver"> 
+    <br> about dynamic components in Angular asdasdvasda dhasgdgasdgjagsd ádagsdgajhsgd
+</h1>
+<button mat-raised-button (click)="openDialog()">Open dialog</button>
+<mat-tab-group>
+    <mat-tab label="Basic Factory Resolver">
         <h3>Factory Resolver</h3>
         <app-a-factory></app-a-factory>
-  
+
         <!-- <h3>NgModuleLoader</h3>
         <app-a-ng></app-a-ng>
   
         <h3>On the fly</h3>
         <app-otf></app-otf> -->
-  
+
     </mat-tab>
-    <mat-tab label="Use dialog with dynamic content"> 
-      <button mat-raised-button (click)="openDialog()">Open dialog</button>
-    </mat-tab>
-    <mat-tab label="Use input without dynamic component" [formGroup]="normalForm"> 
-        <mat-form-field>
-          <input matInput placeholder="Input Text" formControlName="input">
-          <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
-            This field is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
-  
-    </mat-tab>
-    <mat-tab label="Use input with dynamic component" [formGroup]="exampleDynamicForm"> 
+    <mat-tab label="Use input without dynamic component" [formGroup]="normalForm">
         <mat-form-field>
             <input matInput placeholder="Input Text" formControlName="input">
             <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
-              This field is <strong>required</strong>
-            </mat-error>
-          </mat-form-field>
-          <mat-form-field>
-              <input matInput placeholder="Input Text" formControlName="input">
-              <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
                 This field is <strong>required</strong>
-              </mat-error>
-            </mat-form-field>
-      <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
-      <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
-      <p>{{ exampleDynamicForm.get('input').value }}</p>
-      <app-input formControlName="select" placeholder="type select" label="Input Select" type="select" [data]="{ options: options }"></app-input>
-      <p>{{ exampleDynamicForm.get('select').value }}</p>
-      <app-input formControlName="date" placeholder="type text" label="Input Date" type="date"></app-input>
-      <p>{{ exampleDynamicForm.get('date').value | date: 'dd/MM/yyyy' }}</p>
+            </mat-error>
+        </mat-form-field>
+
     </mat-tab>
-  </mat-tab-group>
-  
-                              
+    <mat-tab label="Use input with dynamic component" [formGroup]="exampleDynamicForm">
+        <mat-form-field>
+            <input matInput placeholder="Input Text" formControlName="input">
+            <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
+                This field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Input Text" formControlName="input">
+            <mat-error *ngIf="normalForm.get('input').hasError('required') && (normalForm.get('input').dirty || normalForm.get('input').touched)">
+                This field is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
+        <app-input formControlName="input" placeholder="type text" label="Input Text"></app-input>
+        <p>{{ exampleDynamicForm.get('input').value }}</p>
+        <app-input formControlName="select" placeholder="type select" label="Input Select" type="select" [data]="{ options: options }"></app-input>
+        <p>{{ exampleDynamicForm.get('select').value }}</p>
+        <app-input formControlName="date" placeholder="type text" label="Input Date" type="date"></app-input>
+        <p>{{ exampleDynamicForm.get('date').value | date: 'dd/MM/yyyy' }}</p>
+    </mat-tab>
+</mat-tab-group>

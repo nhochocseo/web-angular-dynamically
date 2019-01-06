@@ -3,6 +3,8 @@ import { LoginDialogComponent } from 'src/app/admin/login-dialog/login-dialog.co
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialog } from '@angular/material';
 import { dataPost } from 'src/app/services/dataFace/newpost.service';
+import { HelperFunction } from 'src/app/share/helper/helper.function';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-home',
@@ -34,7 +36,8 @@ export class UserHomeComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private dialog: MatDialog
+    private router: Router,
+    private helperFunction: HelperFunction
   ) { }
   ngOnInit(): void {
     this.exampleDynamicForm = this.fb.group({
@@ -46,21 +49,15 @@ export class UserHomeComponent implements OnInit {
       input: ['', Validators.required],
     });
     this.normalForm.get('input').valueChanges.subscribe(() => {
-      // console.log(this.normalForm.get('input'), this.normalForm.get('input').hasError('required') && (this.normalForm.get('input').dirty || this.normalForm.get('input').touched))
     });
-    //load bài viết
+    // load bài viết
     this.LoadPost();
   }
   LoadPost() {
     this.listPost = dataPost;
   }
-  // openDialog(): void {
-  //   const dialogRef = this.dialog.open(LoginDialogComponent, {
-  //     width: '250px',
-  //   });
-  //   const customData: any = {
-  //     text: 'Pass anything here'
-  //   };
-  // }
+  ChiTiet(data: any) {
+    this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
+  }
 
 }

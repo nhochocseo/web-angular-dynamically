@@ -1,130 +1,47 @@
-export const dataPost: Array<any> = [
+import { Post } from 'src/app/share/interface/post.interface';
+
+export const dataPost: Array<Post> = [
     {
         id: 1,
+        idCategory: 10,
         name: 'Đây là một nội dung rất dài dài dến mức không tưởng . Ta vẫn cứ bước trên đoạn đường đời',
-        url: '#',
-    },
-    {
-        id: 1,
-        name: 'Bài 2',
-        url: '#',
+        content: 'Nội dung',
+        image: 'assets/images/post/default.png'
     },
     {
         id: 2,
-        name: 'Bài 3',
-        url: '#',
+        idCategory: 10,
+        name: 'Tiêu đè 1',
+        content: 'Nội dung 1'
+    },
+    {
+        id: 2,
+        idCategory: 10,
+        name: 'Tiêu đè 2',
+        content: 'Nội dung 1'
     },
     {
         id: 3,
-        name: 'Bài 1',
-        url: '#',
+        idCategory: 10,
+        name: 'Tiêu đè 3',
+        content: 'Nội dung 1'
     },
     {
         id: 4,
-        name: 'Bài 2',
-        url: '#',
+        idCategory: 10,
+        name: 'Tiêu đè 4',
+        content: 'Nội dung 1'
     },
     {
         id: 5,
-        name: 'Bài 3',
-        url: '#',
+        idCategory: 10,
+        name: 'Tiêu đè 5',
+        content: 'Nội dung 1'
     },
     {
         id: 6,
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        id: 7,
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        id: 8,
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        id: 9,
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        id: 10,
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        id: 11,
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        id: 12,
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        id: 13,
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        id: 14,
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        id: 15,
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        id: 16,
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        id: 17,
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        id: 18,
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        id: 19,
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        name: 'Bài 3',
-        url: '#',
-    },
-    {
-        name: 'Bài 1',
-        url: '#',
-    },
-    {
-        name: 'Bài 2',
-        url: '#',
-    },
-    {
-        name: 'Bài 3',
-        url: '#',
-    },
+        idCategory: 10,
+        name: 'Tiêu đè 6',
+        content: 'Nội dung 1'
+    }
 ];

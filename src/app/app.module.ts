@@ -10,6 +10,7 @@ import { AdminModule } from './admin/admin.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { PipeModule } from './share/pipe/module.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,11 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
     DynamicFormModule,
     AdminModule,
     AppRoutingModule,
+    // PipeModule,
     LoadingBarModule.forRoot(),
+  ],
+  exports: [
+    // PipeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

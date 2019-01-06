@@ -9,7 +9,7 @@ export const dataPost: Array<Post> = [
         image: 'assets/images/post/default.png'
     },
     {
-        id: 2,
+        id: 9,
         idCategory: 10,
         name: 'Tiêu đè 1',
         content: 'Nội dung 1'

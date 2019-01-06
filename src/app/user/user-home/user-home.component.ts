@@ -40,6 +40,8 @@ export class UserHomeComponent implements OnInit {
     private helperFunction: HelperFunction
   ) { }
   ngOnInit(): void {
+    this.helperFunction.setTitle('Trang chủ');
+
     this.exampleDynamicForm = this.fb.group({
       input: ['', Validators.required],
       select: ['', Validators.required],

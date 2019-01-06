@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { HelperFunction } from './share/helper/helper.function';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   constructor(
+    private helplFunc: HelperFunction
   ) { }
   ngOnInit(): void {
+    this.helplFunc.setTitle('Trang chủ');
   }
 }

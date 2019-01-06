@@ -13,4 +13,12 @@ a {
         overflow: hidden;
         text-overflow: ellipsis;
     }
+    a {
+        font-size: 16px;
+        font-weight: 500;
+        color: #293134 !important;
+    }
+    a:hover {
+        color: blueviolet!important;
+    }
 }

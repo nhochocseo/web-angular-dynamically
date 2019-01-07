@@ -1,5 +1,5 @@
 <div class="tieude">
-    {{category?.name}} / {{chiTietChuyenMuc?.name}}
+    <a (click)="ViewChuyenMuc()">Chuyên mục</a> / <a (click)="ViewCategory(category?.url)">{{category?.name}}</a> / {{chiTietChuyenMuc?.name}}
 </div>
 <div class="content-post">
     {{chiTietChuyenMuc?.content}}

@@ -29,7 +29,7 @@ export class HelperFunction {
         str = str.trim();
         return str;
     }
-    getIdUrl(url: any) {
+  getIdUrl(url: any) {
       let str = url;
       str = str.match('_+[0-9]*$');
       if (str) {
@@ -37,4 +37,9 @@ export class HelperFunction {
       }
       return str;
   }
+  ActiveMenu(url: any) {
+    let str = url;
+    str = str.split('/');
+    return str;
+}
 }

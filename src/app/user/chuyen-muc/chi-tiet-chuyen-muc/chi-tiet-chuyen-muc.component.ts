@@ -53,6 +53,12 @@ export class ChiTietChuyenMucComponent implements OnInit , OnDestroy {
   ChiTiet(data: any) {
     this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
   }
+  ViewCategory(url: string) {
+    this.router.navigate(['/chuyen-muc/', url]);
+  }
+  ViewChuyenMuc() {
+    this.router.navigate(['/chuyen-muc/']);
+  }
   ngOnDestroy() {
     this.destroy$.next(true);
     this.destroy$.unsubscribe();

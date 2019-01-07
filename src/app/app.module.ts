@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { PipeModule } from './share/pipe/module.pipe';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { PipeModule } from './share/pipe/module.pipe';
     DynamicFormModule,
     AdminModule,
     AppRoutingModule,
+    UserModule,
     // PipeModule,
     LoadingBarModule.forRoot(),
   ],

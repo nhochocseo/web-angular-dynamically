@@ -14,6 +14,7 @@ export class SlideBarComponent implements OnInit {
   listSidebarMenu: Array<any>;
   destroy$: Subject<boolean> = new Subject<boolean>();
   activeLink = '#cecece';
+  duongdan: string;
   @ViewChild('ul') ul;
   constructor(
     private router: Router,
@@ -26,16 +27,26 @@ export class SlideBarComponent implements OnInit {
     this.router.events.pipe(filter(e => e instanceof NavigationEnd ), takeUntil(this.destroy$)).subscribe((e: NavigationEnd ) => {
       this.setPaddingToNavbar(e.url);
     });
+    this.ckekActiveMenu(this.router.url);
+  }
+
+  ckekActiveMenu(url: string) {
+      // console.log(this.helperFunction.ActiveMenu(path));
+      const subpath = this.helperFunction.ActiveMenu(url);
+        if (subpath.length > 2) {
+            this.duongdan = subpath[2];
+        }
   }
   getListMenu() {
     this.listSidebarMenu = dataSlide;
   }
   OpenPage(url: any) {
+    this.ckekActiveMenu(this.router.url);
     this.router.navigate(['/chuyen-muc/', this.helperFunction.change_alias(url)]);
   }
   setPaddingToNavbar(path) {
     this.ul.nativeElement.className = 'menu-left active';
-    const currentMenu = this.listSidebarMenu.filter(menu => {
+    const currentMenu = this.listSidebarMenu.find(menu => {
       // console.log(menu.url);
       // console.log(this.helperFunction.ActiveMenu(path));
       const subpath = this.helperFunction.ActiveMenu(path);
@@ -46,22 +57,9 @@ export class SlideBarComponent implements OnInit {
       }
       // return menu[prop] == path;
     });
-    if (currentMenu.length > 0 && !currentMenu[0]['recognizePath']) {
+    console.log(currentMenu);
+    if (currentMenu && !currentMenu.url) {
       this.ul.nativeElement.className += ' none-sidebar';
     }
-  }
-  ckekActiveMenu(url: string) {
-    this.listSidebarMenu.filter(menu => {
-      // console.log(menu.url);
-      // console.log(this.helperFunction.ActiveMenu(path));
-      const subpath = this.helperFunction.ActiveMenu(url);
-      if (subpath) {
-        if (subpath.length > 2) {
-          console.log(subpath[2]);
-          return subpath[2];
-        }
-      }
-      // return menu[prop] == path;
-    });
   }
 }

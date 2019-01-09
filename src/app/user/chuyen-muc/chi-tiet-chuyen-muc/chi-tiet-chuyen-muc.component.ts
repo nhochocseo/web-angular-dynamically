@@ -5,6 +5,7 @@ import { Subject } from 'rxjs';
 import { HelperFunction } from 'src/app/share/helper/helper.function';
 import { dataPost } from 'src/app/services/dataFace/newpost.service';
 import { dataCategory } from 'src/app/services/dataFace/category.service';
+import { UrlConfig } from 'src/app/constants/config/url.config';
 
 @Component({
   selector: 'app-chi-tiet-chuyen-muc',
@@ -48,16 +49,15 @@ export class ChiTietChuyenMucComponent implements OnInit , OnDestroy {
     this.baiVienLienQuan = dataPost.filter(res => {
       return res.id != id && res.idCategory == this.chiTietChuyenMuc.idCategory;
     });
-    console.log(this.baiVienLienQuan);
   }
   ChiTiet(data: any) {
-    this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
+    this.router.navigate([UrlConfig.CODE, this.helperFunction.change_alias(data.name) + '_' + data.id]);
   }
   ViewCategory(url: string) {
-    this.router.navigate(['/chuyen-muc/', url]);
+    this.router.navigate([UrlConfig.CHUYEN_MUC_CODE, url]);
   }
   ViewChuyenMuc() {
-    this.router.navigate(['/chuyen-muc/']);
+    this.router.navigate([UrlConfig.CHUYEN_MUC_CODE]);
   }
   ngOnDestroy() {
     this.destroy$.next(true);

@@ -59,7 +59,7 @@ export class UserHomeComponent implements OnInit {
     this.listPost = dataPost;
   }
   ChiTiet(data: any) {
-    this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
+    this.router.navigate(['/code/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
   }
 
 }

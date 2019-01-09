@@ -3,25 +3,29 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UserComponent } from '../user/user.component';
 import { CommonModule } from '@angular/common';
 import { RoutingModule } from '../user/routing/routing.module';
+import { AdminComponent } from '../admin/admin.component';
+import { ShopComponent } from '../shop/shop.component';
+import { ShopRoutingModule } from '../shop/routing/shop.routing.module';
 const routes: Routes = [
+  {
+    path: ':ChuoiTieuDe',
+    component: ShopComponent,
+  },
   {
     path: 'admin',
     loadChildren: '../admin/admin.module#AdminModule'
   },
-  // {
-  //   path: '',
-  //   loadChildren: '../user/user.module#UserModule',
-  // },
   {
-  path: ':something',
-  component: UserComponent,
-  }
+    path: 'code',
+    component: UserComponent,
+  },
 ];
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { useHash: false, preloadingStrategy: PreloadAllModules }),
     CommonModule,
     RoutingModule,
+    ShopRoutingModule,
   ],
   exports: [RouterModule]
 })

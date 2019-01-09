@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material';
 import {MatIconModule} from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { HelperFunction } from '../share/helper/helper.function';
+import { UrlConfig } from '../constants/config/url.config';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -28,6 +29,6 @@ export class UserComponent implements OnInit {
     this.isShow = !this.isShow;
   }
   Home() {
-    this.router.navigate(['/']);
+    this.router.navigate([UrlConfig.CODE]);
   }
 }

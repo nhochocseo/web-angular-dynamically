@@ -12,6 +12,7 @@ import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { PipeModule } from './share/pipe/module.pipe';
 import { UserModule } from './user/user.module';
+import { ShopModule } from './shop/shop.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { UserModule } from './user/user.module';
     ReactiveFormsModule,
     FormsModule,
     DynamicFormModule,
+    ShopModule,
     AdminModule,
     AppRoutingModule,
     UserModule,

@@ -1,0 +1,19 @@
+<div class="header pd-15 row">
+    <h3 class="header-left">
+        <div class="icon-menu" (click)="ShowSidebar()">
+            <mat-icon>menu</mat-icon>
+        </div>
+        Shop
+    </h3>
+    <div class="header-right">
+        <a class="login" (click)="openDialogLogin()">Đăng nhập</a>
+    </div>
+</div>
+<div class="container-full">
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+<div class="footer">
+    Copyright © 2018 Cao Dũng. All Rights Reversed
+</div>

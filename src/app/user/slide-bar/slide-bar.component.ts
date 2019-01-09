@@ -13,7 +13,7 @@ import { Subject } from 'rxjs';
 export class SlideBarComponent implements OnInit {
   listSidebarMenu: Array<any>;
   destroy$: Subject<boolean> = new Subject<boolean>();
-  activeLink = '#cecece';
+  activeLink = 'rgb(84, 28, 86)';
   duongdan: string;
   @ViewChild('ul') ul;
   constructor(
@@ -23,10 +23,10 @@ export class SlideBarComponent implements OnInit {
 
   ngOnInit() {
     this.getListMenu();
-    this.setPaddingToNavbar(this.router.url);
-    this.router.events.pipe(filter(e => e instanceof NavigationEnd ), takeUntil(this.destroy$)).subscribe((e: NavigationEnd ) => {
-      this.setPaddingToNavbar(e.url);
-    });
+    // this.setPaddingToNavbar(this.router.url);
+    // this.router.events.pipe(filter(e => e instanceof NavigationEnd ), takeUntil(this.destroy$)).subscribe((e: NavigationEnd ) => {
+    //   this.setPaddingToNavbar(e.url);
+    // });
     this.ckekActiveMenu(this.router.url);
   }
 
@@ -42,7 +42,7 @@ export class SlideBarComponent implements OnInit {
   }
   OpenPage(url: any) {
     this.ckekActiveMenu(this.router.url);
-    this.router.navigate(['/chuyen-muc/', this.helperFunction.change_alias(url)]);
+    this.router.navigate(['/code/chuyen-muc/', this.helperFunction.change_alias(url)]);
   }
   setPaddingToNavbar(path) {
     this.ul.nativeElement.className = 'menu-left active';

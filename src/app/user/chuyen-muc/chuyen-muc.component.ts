@@ -5,6 +5,7 @@ import { HelperFunction } from 'src/app/share/helper/helper.function';
 import { takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { dataCategory } from 'src/app/services/dataFace/category.service';
+import { UrlConfig } from 'src/app/constants/config/url.config';
 
 @Component({
   selector: 'app-chuyen-muc',
@@ -43,6 +44,6 @@ export class ChuyenMucComponent implements OnInit {
     this.listPost = dataPost.filter(res => res.idCategory == categoryId);
   }
   ChiTiet(data: any) {
-    this.router.navigate(['/', this.helperFunction.change_alias(data.name) + '_' + data.id]);
+    this.router.navigate([UrlConfig.CODE, this.helperFunction.change_alias(data.name) + '_' + data.id]);
   }
 }

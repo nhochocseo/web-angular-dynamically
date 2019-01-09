@@ -1,13 +1,19 @@
 <div class="body-admin">
     <div class="header pd-15 row">
-        <h3 class="header-left">
-            <div class="icon-menu" (click)="ShowSidebar()">
-                <mat-icon>menu</mat-icon>
-            </div>
-            CPBlogCMS
+        <h3 class="header-left">            
+            CDCMS
         </h3>
         <div class="header-right">
-            <a class="login" (click)="openDialogLogin()">Đăng nhập</a>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Tên tài khoản
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </div>
         </div>
     </div>
     <div class="container-full">

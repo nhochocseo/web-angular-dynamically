@@ -7,6 +7,22 @@
         color: #000;
         .header {
             background: rgba(74, 100, 144, 1) !important;
+            color: #FFF;
+            .header-left {
+                width: 50%;
+                padding: 0px 20px;
+            }
+            .header-right {
+                width: 50%;
+                text-align: right;
+                padding: 0px 20px;
+                line-height: 32px;
+                .dropdown {
+                    .btn-secondary {
+                        color: #FFF;
+                    }
+                }
+            }
         }
     }
 }

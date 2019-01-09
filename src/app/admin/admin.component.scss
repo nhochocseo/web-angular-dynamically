@@ -1,0 +1,12 @@
+:host ::ng-deep {
+    .body-admin {
+        min-height: 100%;
+        min-width: 100%;
+        position: fixed;
+        background: #FFF;
+        color: #000;
+        .header {
+            background: rgba(74, 100, 144, 1) !important;
+        }
+    }
+}

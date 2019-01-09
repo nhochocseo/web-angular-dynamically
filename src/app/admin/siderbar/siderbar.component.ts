@@ -1,16 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { dataSlide } from 'src/app/services/dataFace/sidebar.service';
-import { Router, NavigationEnd } from '@angular/router';
-import { HelperFunction } from 'src/app/share/helper/helper.function';
-import { filter, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+import { HelperFunction } from 'src/app/share/helper/helper.function';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-slide-bar',
-  templateUrl: './slide-bar.component.html',
-  styleUrls: ['./slide-bar.component.scss']
+  selector: 'app-siderbar',
+  templateUrl: './siderbar.component.html',
+  styleUrls: ['./siderbar.component.scss']
 })
-export class SlideBarComponent implements OnInit {
+export class SiderbarComponent implements OnInit {
   listSidebarMenu: Array<any>;
   destroy$: Subject<boolean> = new Subject<boolean>();
   activeLink = 'rgb(84, 28, 86)';

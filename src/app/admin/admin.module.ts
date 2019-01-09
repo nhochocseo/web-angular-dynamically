@@ -8,6 +8,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePanelComponent } from './home-panel/home-panel.component';
 import { RoutingModule } from './routing/routing.module';
 import { AdminComponent } from './admin.component';
+import { SiderbarComponent } from './siderbar/siderbar.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { AdminComponent } from './admin.component';
   ],
   declarations: [
     HomePanelComponent,
-    AdminComponent
+    AdminComponent,
+    SiderbarComponent
   ]
 })
 export class AdminModule { }

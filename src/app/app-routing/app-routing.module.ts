@@ -17,7 +17,7 @@ const routes: Routes = [
   },
   {
     path: 'code',
-    component: UserComponent,
+    loadChildren: '../user/user.module#UserModule'
   },
 ];
 @NgModule({

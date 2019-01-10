@@ -12,6 +12,10 @@ import { HomePanelComponent } from '../home-panel/home-panel.component';
       data: { breadcrumbs: 'Trang chủ' },
       children: [
         {
+          path: 'shop',
+          loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
+        },
+        {
           path: '',
           component: HomePanelComponent,
           pathMatch: 'full'

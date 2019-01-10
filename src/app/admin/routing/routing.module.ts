@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AdminComponent } from '../admin.component';
 import { HomePanelComponent } from '../home-panel/home-panel.component';
+import { ShopAdminModule } from '../shop-admin/shop-admin.module';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -12,13 +12,14 @@ import { HomePanelComponent } from '../home-panel/home-panel.component';
       data: { breadcrumbs: 'Trang chủ' },
       children: [
         {
-          path: 'shop',
-          loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
-        },
-        {
           path: '',
           component: HomePanelComponent,
           pathMatch: 'full'
+        },
+        {
+          path: 'shop',
+          // loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
+          loadChildren: () => ShopAdminModule
         },
       ]
     },
@@ -29,4 +30,4 @@ import { HomePanelComponent } from '../home-panel/home-panel.component';
   ])],
   exports: [RouterModule]
 })
-export class RoutingModule { }
+export class AdminRoutingModule { }

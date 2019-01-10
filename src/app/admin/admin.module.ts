@@ -6,20 +6,22 @@ import { CustomMaterialModule } from '../material.module';
 import { FactoryResolverModule } from '../factory-resolver/factory-resolver.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePanelComponent } from './home-panel/home-panel.component';
-import { RoutingModule } from './routing/routing.module';
 import { AdminComponent } from './admin.component';
 import { SiderbarComponent } from './siderbar/siderbar.component';
+import { ShopAdminModule } from './shop-admin/shop-admin.module';
+import { AdminRoutingModule } from './routing/routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     LoginDialogModule,
-    RoutingModule,
+    ShopAdminModule,
     FactoryResolverModule,
     ReactiveFormsModule,
     FormsModule,
     DynamicFormModule,
     CustomMaterialModule,
+    AdminRoutingModule
   ],
   entryComponents: [
   ],
@@ -27,6 +29,7 @@ import { SiderbarComponent } from './siderbar/siderbar.component';
     HomePanelComponent,
     AdminComponent,
     SiderbarComponent
-  ]
+  ],
+  bootstrap: [AdminComponent],
 })
 export class AdminModule { }

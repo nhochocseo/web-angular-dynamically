@@ -8,14 +8,12 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomePanelComponent } from './home-panel/home-panel.component';
 import { AdminComponent } from './admin.component';
 import { SiderbarComponent } from './siderbar/siderbar.component';
-import { ShopAdminModule } from './shop-admin/shop-admin.module';
 import { AdminRoutingModule } from './routing/routing.module';
 
 @NgModule({
   imports: [
     CommonModule,
     LoginDialogModule,
-    ShopAdminModule,
     FactoryResolverModule,
     ReactiveFormsModule,
     FormsModule,

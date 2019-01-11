@@ -18,8 +18,9 @@ import { ShopAdminModule } from '../shop-admin/shop-admin.module';
         },
         {
           path: 'shop',
-          // loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
-          loadChildren: () => ShopAdminModule
+          // component: HomePanelComponent,
+          loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
+          // loadChildren: () => ShopAdminModule
         },
       ]
     },

@@ -7,7 +7,7 @@ import { ShopAdminHomeComponent } from '../shop-admin-home/shop-admin-home.compo
 @NgModule({
   imports: [RouterModule.forChild([
     {
-      path: 'shop',
+      path: '',
       component: ShopAdminComponent,
       data: { breadcrumbs: 'Trang chủ' },
       children: [

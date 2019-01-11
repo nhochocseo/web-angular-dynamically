@@ -10,6 +10,24 @@ import { HelperFunction } from 'src/app/share/helper/helper.function';
 })
 export class BlogAdminCategoryComponent implements OnInit {
   DanhMuc: FormGroup;
+  options = [
+    {
+      id: 1,
+      value: 'Value 1'
+    },
+    {
+      id: 2,
+      value: 'Value 2'
+    },
+    {
+      id: 3,
+      value: 'Value 3'
+    },
+    {
+      id: 4,
+      value: 'Value 4'
+    },
+  ];
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -19,7 +37,8 @@ export class BlogAdminCategoryComponent implements OnInit {
   ngOnInit() {
     this.DanhMuc = this.fb.group({
       name: ['', Validators.required],
-      url: ['', Validators.required]
+      url: ['', Validators.required],
+      parentId: ['', Validators.required]
     });
   }
 

@@ -22,13 +22,26 @@ a {
         color: blueviolet!important;
     }
 }
+
 ul {
     margin: 0px;
     padding: 0px;
 }
+
 li {
     list-style: none;
 }
+
 .mat-tab-body {
     margin: 0px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-form {
+    width: 100%;
+}
+
+.center {
+    text-align: center;
 }

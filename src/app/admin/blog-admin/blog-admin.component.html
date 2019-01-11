@@ -1,8 +1,8 @@
-<ul class="main-menu">
-    <li *ngFor="let menu of listMenu" (click)="OpenPage(menu.url)">
-        <a>{{menu.name}}</a>
-    </li>
-</ul>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item" *ngFor="let menu of listMenu"><a (click)="OpenPage(menu.url)">{{menu.name}}</a></li>
+    </ol>
+</nav>
 <div class="main-blog">
     <router-outlet></router-outlet>
 </div>

@@ -1,4 +1,6 @@
 ul.main-menu {
+    margin-bottom: 0px;
+    display: inline-block;
     li {
         float: left;
         padding-right: 10px;
@@ -7,6 +9,7 @@ ul.main-menu {
         }
     }
 }
+
 .main-blog {
     clear: both;
     background: #fff;

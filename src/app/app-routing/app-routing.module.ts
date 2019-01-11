@@ -24,8 +24,6 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes, { useHash: false, preloadingStrategy: PreloadAllModules }),
     CommonModule,
-    RoutingModule,
-    ShopRoutingModule,
   ],
   exports: [RouterModule]
 })

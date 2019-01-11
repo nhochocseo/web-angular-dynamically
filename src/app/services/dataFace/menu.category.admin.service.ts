@@ -18,3 +18,13 @@ export const dataMenuCategory: Array<any> = [
         url: 'admin/shop',
     }
 ];
+export const dataMenu: Array<any> = [
+    {
+        name: 'Blog',
+        url: '',
+    },
+    {
+        name: 'Category',
+        url: '/category',
+    }
+];

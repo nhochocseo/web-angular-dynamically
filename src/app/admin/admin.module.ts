@@ -19,7 +19,7 @@ import { AdminRoutingModule } from './routing/routing.module';
     FormsModule,
     DynamicFormModule,
     CustomMaterialModule,
-    AdminRoutingModule
+    AdminRoutingModule,
   ],
   entryComponents: [
   ],

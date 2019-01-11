@@ -1,2 +1,8 @@
-Menu Blog
-<router-outlet></router-outlet>
+<ul class="main-menu">
+    <li *ngFor="let menu of listMenu" (click)="OpenPage(menu.url)">
+        <a>{{menu.name}}</a>
+    </li>
+</ul>
+<div class="main-blog">
+    <router-outlet></router-outlet>
+</div>

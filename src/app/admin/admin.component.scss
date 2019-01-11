@@ -102,7 +102,8 @@
     @media (max-width: 767px) {
         .container-full {
             .siderbar {
-                top: 64px;
+                overflow: hidden;
+                top: 53px;
                 width: 0px;
                 transition: 0.5s all;
                 position: fixed;
@@ -111,7 +112,7 @@
                 width: 250px;
                 transition: 0.5s all;
                 display: block !important;
-                background: #1d0e31f5;
+                background: #fbfbfb;
                 z-index: 999;
                 border-right: 1px solid #d9d9d9;
                 transition: 0.5s all;

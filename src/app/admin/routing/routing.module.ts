@@ -3,6 +3,7 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent } from '../admin.component';
 import { HomePanelComponent } from '../home-panel/home-panel.component';
 import { ShopAdminModule } from '../shop-admin/shop-admin.module';
+import { BlogAdminModule } from '../blog-admin/blog-admin.module';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -18,9 +19,12 @@ import { ShopAdminModule } from '../shop-admin/shop-admin.module';
         },
         {
           path: 'shop',
-          // component: HomePanelComponent,
-          loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
-          // loadChildren: () => ShopAdminModule
+          // loadChildren: '../shop-admin/shop-admin.module#ShopAdminModule'
+          loadChildren: () => ShopAdminModule
+        },
+        {
+          path: 'blog',
+          loadChildren: () => BlogAdminModule
         },
       ]
     },

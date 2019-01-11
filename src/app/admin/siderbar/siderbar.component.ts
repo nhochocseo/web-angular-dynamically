@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { dataSlide } from 'src/app/services/dataFace/sidebar.service';
 import { Subject } from 'rxjs';
 import { HelperFunction } from 'src/app/share/helper/helper.function';
 import { Router } from '@angular/router';
+import { dataMenuCategory } from 'src/app/services/dataFace/menu.category.admin.service';
 
 @Component({
   selector: 'app-siderbar',
@@ -12,7 +12,10 @@ import { Router } from '@angular/router';
 export class SiderbarComponent implements OnInit {
   listSidebarMenu: Array<any>;
   destroy$: Subject<boolean> = new Subject<boolean>();
-  activeLink = 'rgb(84, 28, 86)';
+  myStyles = {
+    'background-color': 'rgb(239, 234, 234)',
+    'border-bottom': '1px solid #fff'
+    };
   duongdan: string;
   @ViewChild('ul') ul;
   constructor(
@@ -33,12 +36,14 @@ export class SiderbarComponent implements OnInit {
         }
   }
   getListMenu() {
-    this.listSidebarMenu = dataSlide;
+    this.listSidebarMenu = dataMenuCategory;
   }
-  OpenPage(url: any) {
+  OpenPage(url: string) {
+    console.log(url);
     this.ckekActiveMenu(this.router.url);
-    this.router.navigate(['/code/chuyen-muc/', this.helperFunction.change_alias(url)]);
+    this.router.navigateByUrl('/' + url);
   }
+
   setPaddingToNavbar(path) {
     this.ul.nativeElement.className = 'menu-left active';
     const currentMenu = this.listSidebarMenu.find(menu => {

@@ -48,7 +48,7 @@
     }
     .container-full {
         position: absolute;
-        top: 89px;
+        margin-top: 15px;
         width: 100%;
         .siderbar {
             width: 20%;
@@ -61,6 +61,7 @@
         .siderbar.show {
             width: 0px;
             transition: 0.5s all;
+            overflow: hidden;
         }
         .main-content {
             width: 80%;

@@ -21,13 +21,13 @@ import { AdminRoutingModule } from './routing/routing.module';
     CustomMaterialModule,
     AdminRoutingModule,
   ],
-  entryComponents: [
-  ],
+  // entryComponents: [
+  // ],
   declarations: [
     HomePanelComponent,
     AdminComponent,
     SiderbarComponent
   ],
-  bootstrap: [AdminComponent],
+  // bootstrap: [AdminComponent],
 })
 export class AdminModule { }

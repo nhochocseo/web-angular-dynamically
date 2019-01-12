@@ -12,6 +12,7 @@ import { dataCategory } from 'src/app/services/dataFace/category.service';
 export class BlogAdminCategoryComponent implements OnInit {
   DanhMuc: FormGroup;
   listCategory: any;
+  isIdClass: any;
   constructor(
     private fb: FormBuilder,
     private router: Router,
@@ -31,7 +32,11 @@ export class BlogAdminCategoryComponent implements OnInit {
     console.log(this.listCategory);
   }
   EditCategory(cate: any) {
+    this.isIdClass = cate.id;
     this.DanhMuc.patchValue(cate);
+  }
+  OnChange() {
+    this.DanhMuc.controls.url.setValue(this.helperFunction.change_alias(this.DanhMuc.controls.name.value));
   }
 
 }

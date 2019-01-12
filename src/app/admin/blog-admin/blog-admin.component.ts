@@ -10,6 +10,7 @@ import { dataMenu } from 'src/app/services/dataFace/menu.category.admin.service'
 export class BlogAdminComponent implements OnInit {
     urlBlog = '/admin/blog';
     listMenu: any;
+    isUrlClass = '';
   constructor(
     private router: Router,
   ) { }
@@ -18,6 +19,8 @@ export class BlogAdminComponent implements OnInit {
       this.listMenu = dataMenu;
   }
   OpenPage(url: string) {
+    console.log(url);
+    this.isUrlClass = url;
       url = this.urlBlog + '' + url;
     this.router.navigateByUrl(url);
   }

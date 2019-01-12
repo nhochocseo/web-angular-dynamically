@@ -1,6 +1,7 @@
 ul.main-menu {
     margin: 0px;
     padding: 0px;
+    background: #f2f2f2;
     li {
         padding: 5px 0px 5px 15px;
         transition: 0.6s all;
@@ -20,9 +21,13 @@ ul.main-menu {
             text-decoration: none;
         }
     }
+    li.active {
+        background-color: #cfd3d6;
+        border-bottom: 1px solid #fff;
+    }
     li:hover {
         cursor: pointer;
-        background: #fafafa36;
+        background: #cfd3d6;
         transition: 0.6s all;
     }
 }

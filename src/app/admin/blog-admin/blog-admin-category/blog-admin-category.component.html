@@ -5,7 +5,7 @@
                     <div class="col-md-6">
                         <div class="row">
                             <div class="col-md-12">
-                                <app-input formControlName="name" placeholder="Tiêu đề"></app-input>
+                                <app-input formControlName="name" (keyup)="OnChange()" placeholder="Tiêu đề"></app-input>
                             </div>
                             <div class="col-md-5">
                                 <app-input formControlName="url" placeholder="Đường dẫn" readonly="true"></app-input>
@@ -19,8 +19,8 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <ul>
-                            <li *ngFor="let cate of listCategory"><a (click)="EditCategory(cate)">{{cate.name}}</a></li>
+                        <ul class="list-category">
+                            <li *ngFor="let cate of listCategory"><a (click)="EditCategory(cate)" class="item-{{cate.id}}" [ngClass]="isIdClass == cate.id ? 'active' : ''">{{cate.name}}</a></li>
                         </ul>
                     </div>
                 </div>

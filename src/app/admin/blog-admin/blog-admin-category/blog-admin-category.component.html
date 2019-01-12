@@ -1,20 +1,29 @@
 <mat-tab-group>
     <mat-tab label="Thêm danh mục" [formGroup]="DanhMuc">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <app-input formControlName="name" placeholder="Tiêu đề"></app-input>
-                </div>
-                <div class="col-md-5">
-                    <app-input formControlName="url" placeholder="Đường dẫn"></app-input>
-                </div>
-                <div class="col-md-6">
-                    <app-input formControlName="parentId" placeholder="Danh mục cha" type="select" [data]="{ options: options }"></app-input>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <app-input formControlName="name" placeholder="Tiêu đề"></app-input>
+                            </div>
+                            <div class="col-md-5">
+                                <app-input formControlName="url" placeholder="Đường dẫn" readonly="true"></app-input>
+                            </div>
+                            <div class="col-md-6">
+                                <app-input formControlName="parentId" placeholder="Danh mục cha" valueName="name" valueType="id" type="select" [data]="{ options: listCategory }"></app-input>
+                            </div>
+                        </div>
+                        <div class="center pd-15">
+                            <button mat-raised-button color="primary">Lưu</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul>
+                            <li *ngFor="let cate of listCategory"><a (click)="EditCategory(cate)">{{cate.name}}</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="center">
-                <button mat-raised-button color="primary">Lưu</button>
-            </div>
-        </div>
     </mat-tab>
 </mat-tab-group>

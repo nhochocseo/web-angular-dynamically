@@ -23,7 +23,7 @@ export class LoginDialogComponent implements OnInit {
   OnDestroy() {
   }
   OnSubmit() {
-    console.log(this.LoginForm);
+    // console.log(this.LoginForm);
   }
   onNoClick(): void {
     this.dialogRef.close();

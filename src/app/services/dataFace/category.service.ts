@@ -10,7 +10,7 @@ export const dataCategory: Array<Category> = [
     },
     {
         id: 2,
-        parentId: 0,
+        parentId: 1,
         name: 'Seo',
         url: 'seo',
         describe: ''

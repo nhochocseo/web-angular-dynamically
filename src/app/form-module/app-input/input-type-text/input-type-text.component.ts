@@ -9,6 +9,7 @@ import { IDataText, InputTypeBase } from '../input-type.interface';
 })
 export class InputTypeTextComponent extends InputTypeBase<IDataText> implements OnInit {
   placeholder: any = '';
+  readonly = false;
   _formControlInput: FormControl = new FormControl();
   set formControlInput(control: FormControl) {
     if (control) {

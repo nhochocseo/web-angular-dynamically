@@ -48,6 +48,9 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   @Input() errorMessages: any;
   @Input() type: any = 'text';
   @Input() needCheckValueChange = false;
+  @Input() valueName = 'sname';
+  @Input() valueType = 'sid';
+  @Input() readonly = false;
   @Output() getConTrolValidValue: EventEmitter<any> = new EventEmitter;
   _data: any = {};
   destroy$: Subject<boolean> = new Subject<boolean>();
@@ -110,6 +113,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   ngOnInit(): void {
+    console.log(this.valueName);
     if (this._controlContainer && this.formControlName) {
       this.formControl = this._controlContainer.control.get(this.formControlName);
     }
@@ -134,8 +138,11 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
     }
     const factory = this._resolver.resolveComponentFactory(component);
     this.componentRef = entry.createComponent(factory);
-    // console.log(this.componentRef);
+    // truyen data vào input
     (<InputTypeBase<any>>this.componentRef.instance).formControlInput = this.formControl;
+    this.componentRef.instance.valueName = this.valueName;
+    this.componentRef.instance.valueType = this.valueType;
+    this.componentRef.instance.readonly = this.readonly;
     this.initDataForChild(this.data);
     // https://angular.io/api/core/ChangeDetectorRef
     this.componentRef.changeDetectorRef.detectChanges();

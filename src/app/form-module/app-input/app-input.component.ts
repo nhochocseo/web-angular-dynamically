@@ -113,7 +113,7 @@ export class AppInputComponent implements OnInit, ControlValueAccessor, AfterVie
   }
 
   ngOnInit(): void {
-    console.log(this.valueName);
+    // console.log(this.valueName);
     if (this._controlContainer && this.formControlName) {
       this.formControl = this._controlContainer.control.get(this.formControlName);
     }

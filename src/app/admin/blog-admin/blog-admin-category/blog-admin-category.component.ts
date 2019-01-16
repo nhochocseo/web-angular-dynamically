@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HelperFunction } from 'src/app/share/helper/helper.function';
 import { dataCategory } from 'src/app/services/dataFace/category.service';
+import { groupBy, chain, get, map, find } from 'lodash';
 
 @Component({
   selector: 'app-blog-admin-category',
@@ -28,7 +29,11 @@ export class BlogAdminCategoryComponent implements OnInit {
     });
   }
   getListcategory() {
-    this.listCategory = dataCategory;
+    const res = groupBy(dataCategory, 'parentId');
+    this.listCategory = Object.keys(res).map(key => ({
+      parentId: key,
+      data: res[key]
+    }));
     console.log(this.listCategory);
   }
   EditCategory(cate: any) {

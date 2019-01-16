@@ -21,5 +21,26 @@ export const dataCategory: Array<Category> = [
         name: 'Tản mạn',
         url: 'tan-man',
         describe: ''
-    }
+    },
+    {
+        id: 4,
+        parentId: 1,
+        name: 'C#',
+        url: 'c#',
+        describe: ''
+    },
+    {
+        id: 5,
+        parentId: 1,
+        name: 'PHP',
+        url: 'php',
+        describe: ''
+    },
+    {
+        id: 6,
+        parentId: 4,
+        name: 'API',
+        url: 'api',
+        describe: ''
+    },
 ];

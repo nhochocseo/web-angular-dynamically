@@ -17,6 +17,7 @@ export class BlogAdminComponent implements OnInit {
 
   ngOnInit() {
       this.listMenu = dataMenu;
+      console.log("vào blog admin");
   }
   OpenPage(url: string) {
     console.log(url);

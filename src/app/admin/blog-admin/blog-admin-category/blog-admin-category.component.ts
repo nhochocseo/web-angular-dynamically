@@ -30,7 +30,8 @@ export class BlogAdminCategoryComponent implements OnInit {
     });
   }
   getListcategory() {
-    this.listCategorySelect = this.FormToDataMenu(dataCategory, 0);
+    this.listCategorySelect = dataCategory;
+    this.listCategory = dataCategory;
     // const res = groupBy(dataCategory, 'parentId');
     // console.log(res);
     // this.listCategory = Object.keys(res).map((key) => ({
@@ -49,30 +50,6 @@ export class BlogAdminCategoryComponent implements OnInit {
   }
   OnChange() {
     this.DanhMuc.controls.url.setValue(this.helperFunction.change_alias(this.DanhMuc.controls.name.value));
-  }
-  FormToDataMenu(data: any, parent_id, newdata = []) {
-     data.forEach(cate => {
-      if (cate.parentId == parent_id) {
-          if (parent_id == 0) {
-            newdata.push(cate);
-          } else if (newdata) {
-    console.log(newdata);
-            newdata.forEach(newcate => {
-              console.log(cate);
-              // console.log(newcate);
-              if (parent_id == newcate.id) {
-                if (!newcate.child) {
-                  newcate.child = [];
-                }
-                newcate.child.push(cate);
-              }
-            });
-          }
-          data = data.filter(item => item.id != cate.id);
-          this.FormToDataMenu(data, cate.id, newdata);
-        }
-     });
-    return newdata;
   }
 
 }

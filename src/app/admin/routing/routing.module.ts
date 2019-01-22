@@ -8,7 +8,7 @@ import { BlogAdminModule } from '../blog-admin/blog-admin.module';
 @NgModule({
   imports: [RouterModule.forChild([
     {
-      path: 'admin',
+      path: '',
       component: AdminComponent,
       data: { breadcrumbs: 'Trang chủ' },
       children: [

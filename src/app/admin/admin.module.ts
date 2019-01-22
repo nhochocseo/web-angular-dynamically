@@ -28,6 +28,6 @@ import { AdminRoutingModule } from './routing/routing.module';
     AdminComponent,
     SiderbarComponent
   ],
-  // bootstrap: [AdminComponent],
+  bootstrap: [AdminComponent],
 })
 export class AdminModule { }

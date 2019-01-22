@@ -6,18 +6,22 @@ import { RoutingModule } from '../user/routing/routing.module';
 import { AdminComponent } from '../admin/admin.component';
 import { ShopComponent } from '../shop/shop.component';
 import { ShopRoutingModule } from '../shop/routing/shop.routing.module';
+import { AdminModule } from '../admin/admin.module';
+import { UserModule } from '../user/user.module';
 const routes: Routes = [
   {
-    path: ':ChuoiTieuDe',
+    path: '',
     component: ShopComponent,
   },
   {
     path: 'admin',
-    loadChildren: '../admin/admin.module#AdminModule'
+    // loadChildren: '../admin/admin.module#AdminModule'
+    loadChildren: () => AdminModule
   },
   {
     path: 'code',
-    loadChildren: '../user/user.module#UserModule'
+    // loadChildren: '../user/user.module#UserModule'
+    loadChildren: () => UserModule
   },
 ];
 @NgModule({

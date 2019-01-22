@@ -10,7 +10,7 @@ import { ChiTietChuyenMucComponent } from '../chuyen-muc/chi-tiet-chuyen-muc/chi
 @NgModule({
   imports: [RouterModule.forChild([
     {
-      path: 'code',
+      path: '',
       component: UserComponent,
       data: { breadcrumbs: 'Trang chủ' },
       children: [

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HelperFunction } from 'src/app/share/helper/helper.function';
-import { dataCategory } from 'src/app/services/dataFace/category.service';
+import { dataCategory, dataCategoryMenu } from 'src/app/services/dataFace/category.service';
 import { groupBy, chain, get, map, find } from 'lodash';
 
 @Component({
@@ -31,17 +31,7 @@ export class BlogAdminCategoryComponent implements OnInit {
   }
   getListcategory() {
     this.listCategorySelect = dataCategory;
-    this.listCategory = dataCategory;
-    // const res = groupBy(dataCategory, 'parentId');
-    // console.log(res);
-    // this.listCategory = Object.keys(res).map((key) => ({
-    //   id: res[key][0]['id'],
-    //   parentId: key,
-    //   name: res[key][0]['name'],
-    //   url: res[key][0]['url'],
-    //   describe: res[key][0]['describe'],
-    //   data: res[key]
-    // }));
+    this.listCategory = dataCategoryMenu;
     console.log(this.listCategory);
   }
   EditCategory(cate: any) {
@@ -51,5 +41,7 @@ export class BlogAdminCategoryComponent implements OnInit {
   OnChange() {
     this.DanhMuc.controls.url.setValue(this.helperFunction.change_alias(this.DanhMuc.controls.name.value));
   }
-
+  ViewData(event) {
+    console.log(event);
+  }
 }

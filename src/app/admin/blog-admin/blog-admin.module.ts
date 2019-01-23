@@ -8,9 +8,10 @@ import { DynamicFormModule } from 'src/app/form-module/form.module';
 import { CustomMaterialModule } from 'src/app/material.module';
 import { FactoryResolverModule } from 'src/app/factory-resolver/factory-resolver.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MenuCategoryComponent } from './menu-category/menu-category.component';
 
 @NgModule({
-  declarations: [BlogAdminHomeComponent, BlogAdminComponent, BlogAdminCategoryComponent],
+  declarations: [BlogAdminHomeComponent, BlogAdminComponent, BlogAdminCategoryComponent, MenuCategoryComponent],
   imports: [
     CommonModule,
     BlogAdminRoutingModule,

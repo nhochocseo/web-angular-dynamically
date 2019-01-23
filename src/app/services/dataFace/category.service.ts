@@ -44,3 +44,27 @@ export const dataCategory: Array<Category> = [
         describe: ''
     },
 ];
+export const dataCategoryMenu: any = [
+    {
+        title: 'Link 1',
+        link: "/foo",
+        children: [
+          {
+            title: "leve 2",
+            link: "/bar",
+            children: []
+          }
+        ]
+      },
+      {
+        title: "Link 2",
+        link: "/baz",
+        children: [
+            {
+                title: "leve 2",
+                link: "/bar",
+                children: []
+              }
+        ]
+      }
+];

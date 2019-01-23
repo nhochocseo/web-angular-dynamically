@@ -19,12 +19,17 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <ul class="list-category">
+                        <!-- <ul class="list-category">
                             <li *ngFor="let cate of listCategory">
                                 <a (click)="EditCategory(cate)" class="item-{{cate.id}}" [ngClass]="isIdClass == cate.id ? 'active' : ''">
                                     {{cate.name}}
                                 </a>
                             </li>
+                        </ul> -->
+                        <ul class="tree-root-list">
+                            <app-menu-category (data)="ViewData($event)" *ngFor="let item of listCategory"
+                                           [current]="item">
+                            </app-menu-category>
                         </ul>
                     </div>
                 </div>

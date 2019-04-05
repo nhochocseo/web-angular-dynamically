@@ -4,14 +4,14 @@ import { UserComponent } from '../user/user.component';
 import { CommonModule } from '@angular/common';
 import { RoutingModule } from '../user/routing/routing.module';
 import { AdminComponent } from '../admin/admin.component';
-import { ShopComponent } from '../shop/shop.component';
-import { ShopRoutingModule } from '../shop/routing/shop.routing.module';
+// import { ShopRoutingModule } from '../home/routing/shop.routing.module';
 import { AdminModule } from '../admin/admin.module';
 import { UserModule } from '../user/user.module';
+import { HomeAppComponent } from '../home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: ShopComponent,
+    component: HomeAppComponent,
   },
   {
     path: 'admin',

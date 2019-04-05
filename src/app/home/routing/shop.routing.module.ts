@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ShopComponent } from '../shop.component';
 import { HomeComponent } from '../home/home.component';
+import { HomeAppComponent } from '../home.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
     {
       path: '',
-      component: ShopComponent,
+      component: HomeAppComponent,
       data: { breadcrumbs: 'Trang chủ SHop' },
       children: [
         {

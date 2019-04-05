@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { PipeModule } from './share/pipe/module.pipe';
-import { ShopModule } from './shop/shop.module';
+import { HomeAppModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import { ShopModule } from './shop/shop.module';
     ReactiveFormsModule,
     FormsModule,
     DynamicFormModule,
-    ShopModule,
+    HomeAppModule,
     // AdminModule,
     AppRoutingModule,
     // UserModule,

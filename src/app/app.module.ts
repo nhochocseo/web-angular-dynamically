@@ -11,12 +11,14 @@ import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { PipeModule } from './share/pipe/module.pipe';
 import { HomeAppModule } from './home/home.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     CustomMaterialModule,
     FactoryResolverModule,

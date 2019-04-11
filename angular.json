@@ -25,12 +25,11 @@
             "styles": [
               "src/styles.css",
               "src/assets/style.scss",
-              "src/assets/style-chung.scss"
+              "src/assets/style-chung.scss",
+              "src/assets/bootstrap-material-design/css/bootstrap.min.css"
             ],
             "scripts": [
-              "src/assets/bootstrap-material-design/js/jquery-3.3.1.js",
-              "src/assets/bootstrap-material-design/js/popper.min.js",
-              "src/assets/bootstrap-material-design/js/bootstrap-material-design.js"
+              
             ]
           },
           "configurations": {

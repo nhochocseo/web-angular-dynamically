@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../services/home/home.service';
+import { takeUntil } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-shop',
@@ -8,6 +10,7 @@ import { HomeService } from '../services/home/home.service';
 })
 export class HomeAppComponent implements OnInit {
   listMenu: any;
+  destroy$: Subject<boolean> = new Subject<boolean>();
   constructor(
     private homeService: HomeService
   ) { }
@@ -16,8 +19,7 @@ export class HomeAppComponent implements OnInit {
     this.getListMenu();
   }
   getListMenu() {
-    this.homeService.getListDanhMuc().subscribe(res => {
-      console.log(res);
+    this.homeService.getListDanhMuc().pipe(takeUntil(this.destroy$)).subscribe(res => {
       this.listMenu = res;
     });
   }

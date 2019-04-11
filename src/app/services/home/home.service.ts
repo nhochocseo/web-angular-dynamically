@@ -7,7 +7,7 @@ import { ApiPublicService } from '../api-public.service';
   providedIn: 'root'
 })
 export class HomeService {
-    getListDanhMucCode: '001';
+    private getListDanhMucCode = '001';
   constructor(
     private apiPublic: ApiPublicService
     ) {}

@@ -5,3 +5,12 @@
         }
     }    
 }
+.collapsible-body.active {
+    display: block;
+    transition: all 1s; 
+}
+.list-unstyled {
+    li.active {
+        background-color: rgba(29,65,82,.8);
+    }
+}

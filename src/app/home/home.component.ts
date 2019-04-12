@@ -11,6 +11,7 @@ import { Subject } from 'rxjs';
 export class HomeAppComponent implements OnInit {
   listMenu: any;
   destroy$: Subject<boolean> = new Subject<boolean>();
+  selected: any = {};
   constructor(
     private homeService: HomeService
   ) { }
@@ -21,6 +22,15 @@ export class HomeAppComponent implements OnInit {
   getListMenu() {
     this.homeService.getListDanhMuc().pipe(takeUntil(this.destroy$)).subscribe(res => {
       this.listMenu = res;
+      console.log(this.listMenu);
     });
+  }
+  select(type, item, $event) {
+    this.selected[type] = (this.selected[type] === item ? null : item);
+    // tslint:disable-next-line:no-unused-expression
+    $event ? $event.stopPropagation() : null;
+  }
+  isActive(type, item) {
+    return this.selected[type] === item;
   }
 }

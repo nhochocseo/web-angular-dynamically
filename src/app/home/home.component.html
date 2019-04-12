@@ -1,26 +1,3 @@
-<!-- <header class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar">
-    <a class="navbar-brand mr-0 mr-md-2" href="#" aria-label="">
-      D-blog
-    </a>
-  
-    <div class="navbar-nav-scroll">
-      <ul class="navbar-nav bd-navbar-nav flex-row">
-        <li class="nav-item" *ngFor="let item of listMenu" [ngClass]="{'dropdown': item.ListChild}">
-          <a class="nav-link " href="/" *ngIf="item.ListChild.length < 1">{{item.Ten}}</a>
-
-          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"  *ngIf="item.ListChild.length > 0">
-            {{item.Ten}}
-          <div class="ripple-container"></div>
-        </a>
-          <div class="dropdown-menu" aria-labelledby="bd-versions"  *ngIf="item.ListChild.length > 0">
-            <a class="dropdown-item"  *ngFor="let itemChild of item.ListChild; let i = index" [ngClass]="{'actice': i==0}" href="">{{itemChild.Ten}}</a>
-          </div>
-
-        </li>
-      </ul>
-    </div>
-  </header> -->
-
       <!--Double navigation-->
       <header>
         <!-- Sidebar navigation -->
@@ -29,21 +6,21 @@
                 <!-- Logo -->
                 <li>
                     <div class="logo-wrapper waves-light">
-                        <a href="#">
-                          CD-Blog
+                        <a href="#" class="animated pulse infinite">
+                          CDBLOG
                         </a>
                     </div>
                 </li>
                 <!--/. Logo -->
                 <!--Social-->
-                <li>
+                <!-- <li>
                     <ul class="social">
                         <li><a href="#" class="icons-sm fb-ic"><i class="fab fa-facebook-f"> </i></a></li>
                         <li><a href="#" class="icons-sm pin-ic"><i class="fab fa-pinterest"> </i></a></li>
                         <li><a href="#" class="icons-sm gplus-ic"><i class="fab fa-google-plus-g"> </i></a></li>
                         <li><a href="#" class="icons-sm tw-ic"><i class="fab fa-twitter"> </i></a></li>
                     </ul>
-                </li>
+                </li> -->
                 <!--/Social-->
                 <!--Search Form-->
                 <li>
@@ -82,18 +59,9 @@
             </div>
             <!-- Breadcrumb-->
             <div class="breadcrumb-dn mr-auto">
-                <p>Material Design for Bootstrap</p>
+                <p>SHARE THE BEST</p>
             </div>
-            <ul class="nav navbar-nav nav-flex-icons ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fas fa-envelope"></i> <span class="clearfix d-none d-sm-inline-block">Contact</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="far fa-comments"></i> <span class="clearfix d-none d-sm-inline-block">Support</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"><i class="fas fa-user"></i> <span class="clearfix d-none d-sm-inline-block">Account</span></a>
-                </li>
+            <!-- <ul class="nav navbar-nav nav-flex-icons ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Dropdown
@@ -104,22 +72,18 @@
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
                 </li>
-            </ul>
+            </ul> -->
         </nav>
         <!-- /.Navbar -->
     </header>
     <!--/.Double navigation-->
-     <!--Main layout-->
-     <main>        
-            <div class="container-fluid text-center">    
-                <!--Card-->
-                <div class="card card-cascade wider reverse my-4 pb-5">
-                    <router-outlet></router-outlet>    
-                </div>
-                <!--/.Card-->            
-            </div>            
-        </main>
-        <!--/Main layout-->
+<!--Main layout-->
+<main>        
+    <div class="container-fluid">    
+        <router-outlet></router-outlet>            
+    </div>            
+</main>
+<!--/Main layout-->
 <footer class="page-footer text-center text-md-left pt-4">
 
         <!--Footer Links-->

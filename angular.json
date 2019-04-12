@@ -29,7 +29,7 @@
               "src/assets/bootstrap-material-design/css/bootstrap.min.css"
             ],
             "scripts": [
-              
+              "src/assets/bootstrap-material-design/js/custom.js"
             ]
           },
           "configurations": {

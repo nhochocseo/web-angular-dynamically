@@ -8,6 +8,7 @@ import { CustomMaterialModule } from '../material.module';
 import { InputTypeSelectComponent } from './app-input/input-type-select/input-type-select.component';
 import { InputTypeDateComponent } from './app-input/input-type-date/input-type-date.component';
 import { InputTypePasswordComponent } from './app-input/input-type-password/input-type-password.component';
+import { InputTypeSelectTowComponent } from './app-input/input-type-select-drop-tow/input-type-select.component';
 
 @NgModule({
   imports: [
@@ -22,12 +23,14 @@ import { InputTypePasswordComponent } from './app-input/input-type-password/inpu
     InputTypeSelectComponent,
     InputTypeDateComponent,
     InputTypePasswordComponent,
+    InputTypeSelectTowComponent
   ],
   entryComponents: [
     InputTypeTextComponent,
     InputTypeSelectComponent,
     InputTypeDateComponent,
-    InputTypePasswordComponent
+    InputTypePasswordComponent,
+    InputTypeSelectTowComponent
   ],
   providers: [
     DynamicInputService

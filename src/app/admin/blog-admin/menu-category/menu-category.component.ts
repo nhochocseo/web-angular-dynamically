@@ -10,14 +10,14 @@ export class MenuCategoryComponent implements OnInit {
   @Input() current: any;
   @Output() data = new EventEmitter<any>();
   ngOnInit(): void {
-    console.log(this.current);
-    console.log(this.hasChildElements());
+    // console.log(this.current);
+    // console.log(this.hasChildElements());
   }
   /**
    * check whether there are children
    */
   public hasChildElements(): boolean {
-    return this.current.hasOwnProperty('children');
+    return this.current.hasOwnProperty('ListChild');
   }
   ViewData(data: any) {
     this.data.emit(data);

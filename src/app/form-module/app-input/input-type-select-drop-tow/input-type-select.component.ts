@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
-  selector: 'app-input-type-select',
+  selector: 'app-input-type-select-tow',
   templateUrl: './input-type-select.component.html',
   styleUrls: ['./input-type-select.component.css']
 })
-export class InputTypeSelectComponent {
+export class InputTypeSelectTowComponent {
   placeholder: any = '';
   _formControlInput: FormControl = new FormControl();
   options: Array<any> = [];

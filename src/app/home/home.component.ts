@@ -22,7 +22,6 @@ export class HomeAppComponent implements OnInit {
   getListMenu() {
     this.homeService.getListDanhMuc().pipe(takeUntil(this.destroy$)).subscribe(res => {
       this.listMenu = res;
-      console.log(this.listMenu);
     });
   }
   select(type, item, $event) {

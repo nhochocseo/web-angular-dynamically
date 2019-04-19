@@ -23,8 +23,6 @@ export class InputTypeSelectTowComponent {
   }
 
   set data(data) {
-    console.log(data);
-    console.log(this.valueName);
     if (!data) { return; }
     if (data.placeholder) {
       this.placeholder = data.placeholder;

@@ -9,10 +9,13 @@ import { DynamicFormModule } from './form-module/form.module';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppInputComponent } from './form-module/app-input/app-input.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
-import { PipeModule } from './share/pipe/module.pipe';
 import { HomeAppModule } from './home/home.module';
-import { HttpClientModule } from '@angular/common/http';
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ServerInterceptorService } from './services/server-interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
+export const httpInterceptorProviders = [
+  { provide: HTTP_INTERCEPTORS, useClass: ServerInterceptorService, multi: true },
+];
 @NgModule({
   declarations: [
     AppComponent
@@ -32,12 +35,26 @@ import { HttpClientModule } from '@angular/common/http';
     // UserModule,
     // PipeModule,
     LoadingBarModule.forRoot(),
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      extendedTimeOut: 1000,
+      newestOnTop: true,
+      progressBar: true,
+      progressAnimation: 'decreasing',
+      tapToDismiss: true,
+      easeTime: 500,
+      autoDismiss: true,
+      enableHtml: true,
+      preventDuplicates: true,
+      maxOpened: 1
+    }),
   ],
   exports: [
     // PipeModule
   ],
   providers: [
-    Title
+    Title,
+    httpInterceptorProviders
   ],
   bootstrap: [AppComponent],
   entryComponents: [AppInputComponent]
